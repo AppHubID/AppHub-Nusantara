@@ -1,161 +1,130 @@
 /* ==========================================================================
    AppHub.ID — notifications.js
-   Interaksi kontak & notifikasi ringan (toast). Tanpa backend.
+   Menampilkan catatan pembaruan (data/updates.json).
+   Tidak ada backend, tidak ada langganan email palsu.
    ========================================================================== */
 
 (function () {
   'use strict';
 
-  var BASE = (window.AppHub && window.AppHub.base) || '';
+  var MONTHS_ID = [
+    'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+    'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+  ];
 
-  var CONTACT = {
-    whatsapp: 'https://wa.me/6288970200455',
-    gmail: 'mailto:apphubid@gmail.com'
-  };
-
-  /* ---------------------------------------------------------------------
-     Toast
-     --------------------------------------------------------------------- */
-
-  function toastStack() {
-    var stack = document.getElementById('toastStack');
-    if (stack) return stack;
-
-    stack = document.createElement('div');
-    stack.id = 'toastStack';
-    stack.className = 'toast-stack';
-    stack.setAttribute('aria-live', 'polite');
-    stack.setAttribute('aria-atomic', 'true');
-    document.body.appendChild(stack);
-    return stack;
+  function getBasePath() {
+    if (window.AppHub && window.AppHub.basePath) return window.AppHub.basePath;
+    var meta = document.querySelector('meta[name="base-path"]');
+    if (meta && meta.content) return meta.content;
+    var p = window.location.pathname;
+    return (p.indexOf('/pages/') !== -1 || p.indexOf('/subscription/') !== -1) ? '../' : './';
   }
 
-  function showToast(message) {
-    var stack = toastStack();
-    var el = document.createElement('div');
-    el.className = 'toast';
-    el.setAttribute('role', 'status');
-
-    el.innerHTML =
-      '<img src="' + BASE + 'assets/icons/bell.svg" alt="" width="16" height="16">' +
-      '<span>' + String(message) + '</span>';
-
-    stack.appendChild(el);
-
-    window.setTimeout(function () {
-      el.classList.add('is-leaving');
-      window.setTimeout(function () {
-        if (el.parentNode) el.parentNode.removeChild(el);
-      }, 260);
-    }, 3200);
+  function escapeHtml(value) {
+    if (window.AppHub && window.AppHub.escapeHtml) return window.AppHub.escapeHtml(value);
+    return String(value == null ? '' : value)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
   }
 
-  window.AppHub = window.AppHub || {};
-  window.AppHub.toast = showToast;
+  function formatDate(isoString) {
+    if (!isoString) return '';
+    var parts = String(isoString).split('-');
+    if (parts.length !== 3) return isoString;
 
-  /* ---------------------------------------------------------------------
-     Copy to clipboard
-     --------------------------------------------------------------------- */
+    var year = parseInt(parts[0], 10);
+    var month = parseInt(parts[1], 10);
+    var day = parseInt(parts[2], 10);
 
-  function copyText(text) {
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      return navigator.clipboard.writeText(text);
+    if (!year || !month || !day || month < 1 || month > 12) return isoString;
+    return day + ' ' + MONTHS_ID[month - 1] + ' ' + year;
+  }
+
+  function renderItem(item, index, iconPath) {
+    return '' +
+      '<article class="update-item js-reveal" style="--d:' + (index * 0.05) + 's">' +
+        '<div class="update-item__aside">' +
+          '<span class="update-item__date">' +
+            '<img class="icon icon--sm" src="' + iconPath + '" alt="" width="16" height="16" aria-hidden="true">' +
+            '<time datetime="' + escapeHtml(item.tanggal) + '">' +
+              escapeHtml(formatDate(item.tanggal)) +
+            '</time>' +
+          '</span>' +
+          (item.kategori ? '<span class="update-item__tag">' + escapeHtml(item.kategori) + '</span>' : '') +
+        '</div>' +
+        '<div class="update-item__body">' +
+          '<h3 class="update-item__title">' + escapeHtml(item.judul) + '</h3>' +
+          '<p class="update-item__text">' + escapeHtml(item.isi) + '</p>' +
+        '</div>' +
+      '</article>';
+  }
+
+  function render(container, data) {
+    var updates = data && Array.isArray(data.updates) ? data.updates : [];
+    if (!updates.length) {
+      container.innerHTML = '<p class="state">Belum ada pembaruan yang dipublikasikan saat ini.</p>';
+      return;
     }
 
-    return new Promise(function (resolve, reject) {
-      try {
-        var area = document.createElement('textarea');
-        area.value = text;
-        area.setAttribute('readonly', '');
-        area.style.position = 'fixed';
-        area.style.opacity = '0';
-        document.body.appendChild(area);
-        area.select();
-        document.execCommand('copy');
-        document.body.removeChild(area);
-        resolve();
-      } catch (err) {
-        reject(err);
-      }
+    var limitAttr = container.getAttribute('data-limit');
+    var limit = limitAttr ? parseInt(limitAttr, 10) : 0;
+
+    var sorted = updates.slice().sort(function (a, b) {
+      return String(b.tanggal).localeCompare(String(a.tanggal));
     });
+
+    var visible = (limit && limit > 0) ? sorted.slice(0, limit) : sorted;
+    var iconPath = getBasePath() + 'assets/icons/bell.svg';
+
+    container.innerHTML = visible.map(function (item, index) {
+      return renderItem(item, index, iconPath);
+    }).join('');
+
+    container.setAttribute('data-updates-rendered', 'true');
+    document.dispatchEvent(new CustomEvent('apphub:updates-rendered', {
+      detail: { total: visible.length }
+    }));
   }
 
-  /* ---------------------------------------------------------------------
-     Kontak
-     --------------------------------------------------------------------- */
+  function showError(container) {
+    container.innerHTML =
+      '<p class="state state--error">Catatan pembaruan belum dapat dimuat saat ini. ' +
+      'Silakan muat ulang halaman atau hubungi ' +
+      '<a href="mailto:apphubid@gmail.com">apphubid@gmail.com</a>.</p>';
+  }
 
-  function initContactActions() {
-    document.addEventListener('click', function (event) {
-      var trigger = event.target.closest('[data-copy]');
-      if (!trigger) return;
+  function initContainer(container) {
+    if (container.getAttribute('data-updates-loading') === 'true') return;
+    container.setAttribute('data-updates-loading', 'true');
 
-      event.preventDefault();
-      var value = trigger.getAttribute('data-copy');
-
-      copyText(value).then(function () {
-        showToast('Disalin: ' + value);
-      }).catch(function () {
-        showToast('Tidak dapat menyalin otomatis. Nilai: ' + value);
+    fetch(getBasePath() + 'data/updates.json', { cache: 'no-cache' })
+      .then(function (response) {
+        if (!response.ok) throw new Error('HTTP ' + response.status);
+        return response.json();
+      })
+      .then(function (data) {
+        if (!data || typeof data !== 'object') throw new Error('Format data pembaruan tidak valid.');
+        render(container, data);
+      })
+      .catch(function (error) {
+        console.warn('[AppHub] Gagal memuat updates.json:', error.message);
+        showError(container);
       });
-    });
   }
 
-  /* ---------------------------------------------------------------------
-     Promo (dicek di sisi browser, tanpa backend)
-     --------------------------------------------------------------------- */
-
-  var PROMO_END = new Date('2026-11-30T23:59:59+07:00').getTime();
-
-  function isPromoActive() {
-    return Date.now() <= PROMO_END;
+  function initAll() {
+    var containers = document.querySelectorAll('[data-updates]');
+    Array.prototype.forEach.call(containers, initContainer);
   }
 
-  function initPromoBanner() {
-    var banners = document.querySelectorAll('[data-promo-banner]');
-    if (!banners.length) return;
-
-    var active = isPromoActive();
-
-    Array.prototype.forEach.call(banners, function (banner) {
-      if (active) {
-        banner.classList.remove('is-expired');
-        banner.innerHTML =
-          '<img src="' + BASE + 'assets/icons/gift.svg" alt="" width="18" height="18">' +
-          '<span>Harga promo tersedia hingga <strong>30 November 2026</strong>. ' +
-          'Setelah tanggal tersebut, harga normal berlaku.</span>';
-      } else {
-        banner.classList.add('is-expired');
-        banner.innerHTML =
-          '<img src="' + BASE + 'assets/icons/clock.svg" alt="" width="18" height="18">' +
-          '<span>Periode harga promo telah berakhir pada <strong>30 November 2026</strong>. ' +
-          'Harga yang berlaku adalah harga normal.</span>';
-      }
-    });
-
-    document.querySelectorAll('[data-promo-price]').forEach(function (el) {
-      el.hidden = !active;
-    });
-
-    document.querySelectorAll('[data-normal-price-note]').forEach(function (el) {
-      el.hidden = active;
-    });
+  function boot() {
+    var ready = window.AppHub && window.AppHub.ready ? window.AppHub.ready : Promise.resolve();
+    ready.then(initAll);
   }
 
-  /* ---------------------------------------------------------------------
-     Boot
-     --------------------------------------------------------------------- */
-
-  function init() {
-    initContactActions();
-    initPromoBanner();
-  }
-
-  if (window.AppHub && window.AppHub.ready) {
-    init();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
   } else {
-    document.addEventListener('apphub:ready', init);
+    boot();
   }
-
-  window.AppHub.contact = CONTACT;
-  window.AppHub.isPromoActive = isPromoActive;
 })();
