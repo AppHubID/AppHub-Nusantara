@@ -1,4 +1,17 @@
+# robots.txt — AppHub.ID
+# https://apphubid.github.io/AppHub-Nusantara/
+
 User-agent: *
+Allow: /
+Disallow: /components/
+Disallow: /data/
+Disallow: /AppHub-Nusantara/components/
+Disallow: /AppHub-Nusantara/data/
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
 Allow: /
 
 Sitemap: https://apphubid.github.io/AppHub-Nusantara/sitemap.xml
