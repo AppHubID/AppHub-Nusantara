@@ -1,0 +1,15 @@
+# robots.txt — AppHub.ID
+# https://apphubid.github.io/
+
+User-agent: *
+Allow: /
+Disallow: /components/
+Disallow: /data/
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://apphubid.github.io/sitemap.xml
