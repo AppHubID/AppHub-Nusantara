@@ -1,73 +1,59 @@
 {
-  "meta": {
-    "brand": "AppHub.ID",
-    "catatan": "Roadmap ini bersifat indikatif dan dapat berubah sewaktu-waktu. Status diperbarui secara berkala sesuai progres pengembangan yang sebenarnya.",
-    "diperbarui": "2026-01-01"
-  },
+  "updated": "2026-01-05",
   "phases": [
     {
       "id": "persiapan",
-      "fase": "01",
-      "nama": "Persiapan",
-      "status": "Sedang Berjalan",
-      "deskripsi": "Penetapan identitas brand, arah platform, struktur kategori, dan penyiapan kanal komunikasi resmi AppHub.ID.",
-      "poin": [
-        "Identitas visual dan logo AppHub.ID",
-        "Penentuan arah dan posisi platform",
-        "Penyusunan struktur kategori produk",
-        "Penyiapan kanal komunikasi resmi"
+      "phase": "Persiapan",
+      "description": "Perencanaan konsep, penetapan identitas brand, dan penyusunan struktur dasar AppHub.ID.",
+      "state": "done",
+      "points": [
+        "Penetapan nama, tagline, dan identitas visual AppHub.ID",
+        "Penyusunan struktur halaman dan navigasi website",
+        "Penetapan kategori produk yang direncanakan"
       ]
     },
     {
       "id": "pengembangan",
-      "fase": "02",
-      "nama": "Pengembangan",
-      "status": "Direncanakan",
-      "deskripsi": "Pembangunan antarmuka situs, sistem katalog, dan fondasi teknis yang akan digunakan saat peluncuran.",
-      "poin": [
-        "Pembangunan antarmuka situs utama",
-        "Struktur katalog dan navigasi",
-        "Fondasi teknis dan performa",
-        "Sistem pembaruan internal"
+      "phase": "Pengembangan",
+      "description": "Pembangunan website, sistem komponen, serta penyiapan materi produk digital.",
+      "state": "active",
+      "points": [
+        "Pengembangan antarmuka website versi awal",
+        "Penyusunan komponen navigasi, countdown, dan halaman informasi",
+        "Penyiapan materi untuk kategori produk utama"
       ]
     },
     {
       "id": "penyempurnaan",
-      "fase": "03",
-      "nama": "Penyempurnaan",
-      "status": "Direncanakan",
-      "deskripsi": "Perbaikan detail visual, konsistensi konten, serta penyelarasan pengalaman pengguna di seluruh halaman.",
-      "poin": [
-        "Penyelarasan visual dan tipografi",
-        "Perbaikan alur pengguna",
-        "Konsistensi bahasa dan konten",
-        "Optimasi aksesibilitas"
+      "phase": "Penyempurnaan",
+      "description": "Perbaikan tampilan, konsistensi desain, dan penyelarasan pengalaman pengguna di semua ukuran layar.",
+      "state": "planned",
+      "points": [
+        "Penyempurnaan responsivitas mobile, tablet, dan desktop",
+        "Perbaikan aksesibilitas dan keterbacaan",
+        "Konsistensi visual pada seluruh halaman"
       ]
     },
     {
       "id": "pengujian",
-      "fase": "04",
-      "nama": "Pengujian",
-      "status": "Direncanakan",
-      "deskripsi": "Pengujian menyeluruh pada berbagai perangkat dan ukuran layar sebelum platform dinyatakan siap.",
-      "poin": [
-        "Pengujian lintas perangkat",
-        "Pemeriksaan tautan dan navigasi",
-        "Validasi performa halaman",
-        "Pemeriksaan akhir sebelum rilis"
+      "phase": "Pengujian",
+      "description": "Pengujian fungsi, tautan, performa, dan kompatibilitas di berbagai browser.",
+      "state": "planned",
+      "points": [
+        "Pengujian tautan internal dan eksternal",
+        "Pengujian tampilan pada berbagai ukuran layar",
+        "Pemeriksaan performa dasar dan aksesibilitas"
       ]
     },
     {
       "id": "peluncuran",
-      "fase": "05",
-      "nama": "Peluncuran",
-      "status": "Direncanakan",
-      "deskripsi": "Peresmian AppHub.ID dan pembukaan akses platform untuk publik pada tanggal yang telah ditetapkan.",
-      "poin": [
-        "Peresmian platform AppHub.ID",
-        "Pembukaan akses publik",
-        "Publikasi katalog awal",
-        "Pembukaan kanal masukan pengguna"
+      "phase": "Peluncuran",
+      "description": "Rilis resmi AppHub.ID beserta paket langganan dan katalog produk tahap pertama.",
+      "state": "planned",
+      "points": [
+        "Publikasi website resmi AppHub.ID",
+        "Aktivasi halaman paket langganan",
+        "Pembukaan kanal kontak resmi untuk pemesanan"
       ]
     }
   ]
