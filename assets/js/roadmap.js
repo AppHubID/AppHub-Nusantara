@@ -1,20 +1,22 @@
 /* ==========================================================================
    AppHub.ID — roadmap.js
-   Memuat data/roadmap.json dan merendernya ke elemen [data-roadmap].
+   Memuat data/roadmap.json dan merender roadmap (preview & lengkap).
    ========================================================================== */
 
 (function () {
   'use strict';
 
-  function getBasePath() {
-    if (window.AppHub && window.AppHub.basePath) return window.AppHub.basePath;
-    var meta = document.querySelector('meta[name="base-path"]');
-    if (meta && meta.content) return meta.content;
-    return window.location.pathname.indexOf('/pages/') !== -1 ? '../' : './';
-  }
+  var BASE = (window.AppHub && window.AppHub.base) || '';
+  var ROADMAP_URL = BASE + 'data/roadmap.json';
+
+  var STATE_LABEL = {
+    done: 'Selesai',
+    active: 'Sedang Berjalan',
+    planned: 'Direncanakan'
+  };
 
   function escapeHtml(value) {
-    if (window.AppHub && window.AppHub.escapeHtml) {
+    if (window.AppHub && typeof window.AppHub.escapeHtml === 'function') {
       return window.AppHub.escapeHtml(value);
     }
     return String(value == null ? '' : value)
@@ -25,113 +27,84 @@
       .replace(/'/g, '&#39;');
   }
 
-  function statusClass(status) {
-    var normalized = String(status || '').toLowerCase();
-    if (normalized.indexOf('berjalan') !== -1 || normalized.indexOf('sedang') !== -1) {
-      return 'status-pill--active';
-    }
-    if (normalized.indexOf('segera') !== -1) {
-      return 'status-pill--soon';
-    }
-    return 'status-pill--planned';
+  function statusPill(state) {
+    var label = STATE_LABEL[state] || STATE_LABEL.planned;
+    var dataStatus = state === 'done' ? 'Segera Hadir' :
+                     state === 'active' ? 'Sedang Dipersiapkan' : 'Direncanakan';
+    return '<span class="status" data-status="' + dataStatus + '">' +
+      '<span class="status-dot" aria-hidden="true"></span>' + escapeHtml(label) + '</span>';
   }
 
-  function showError(container, message) {
-    container.innerHTML =
-      '<p class="state state--error">' +
-        escapeHtml(message) +
-        ' Silakan muat ulang halaman atau hubungi ' +
-        '<a href="mailto:apphubid@gmail.com">apphubid@gmail.com</a>.' +
-      '</p>';
-  }
+  function itemMarkup(item, index) {
+    var points = Array.isArray(item.points) ? item.points : [];
+    var state = item.state || 'planned';
 
-  function renderPhase(phase, index, iconPath) {
-    var points = Array.isArray(phase.poin) ? phase.poin : [];
-
-    var listHtml = points.map(function (point) {
-      return '<li>' +
-        '<img class="icon icon--sm" src="' + iconPath + '" alt="" width="16" height="16" aria-hidden="true">' +
-        '<span>' + escapeHtml(point) + '</span>' +
-      '</li>';
+    var pointsMarkup = points.map(function (point) {
+      return '<li><img src="' + BASE + 'assets/icons/check.svg" alt="" width="15" height="15">' +
+        '<span>' + escapeHtml(point) + '</span></li>';
     }).join('');
 
     return '' +
-      '<article class="roadmap__item js-reveal" style="--d:' + (index * 0.06) + 's">' +
-        '<div class="roadmap__top">' +
-          '<span class="roadmap__phase">Fase ' + escapeHtml(phase.fase || (index + 1)) + '</span>' +
-          '<span class="status-pill ' + statusClass(phase.status) + '">' +
-            escapeHtml(phase.status || 'Direncanakan') +
-          '</span>' +
+      '<article class="roadmap-item" data-state="' + escapeHtml(state) + '">' +
+        '<div class="roadmap-marker" aria-hidden="true">' + String(index + 1).padStart(2, '0') + '</div>' +
+        '<div class="roadmap-body">' +
+          '<div class="roadmap-head">' +
+            '<h3 class="roadmap-phase">' + escapeHtml(item.phase) + '</h3>' +
+            statusPill(state) +
+          '</div>' +
+          '<p class="roadmap-desc">' + escapeHtml(item.description) + '</p>' +
+          (pointsMarkup ? '<ul class="roadmap-points">' + pointsMarkup + '</ul>' : '') +
         '</div>' +
-        '<h3 class="roadmap__title">' + escapeHtml(phase.nama) + '</h3>' +
-        '<p class="roadmap__desc">' + escapeHtml(phase.deskripsi) + '</p>' +
-        (listHtml ? '<ul class="roadmap__list">' + listHtml + '</ul>' : '') +
       '</article>';
   }
 
-  function render(container, data) {
-    var phases = data && Array.isArray(data.phases) ? data.phases : [];
+  function render(container, items, limit) {
+    var list = limit ? items.slice(0, limit) : items;
 
-    if (!phases.length) {
-      container.innerHTML = '<p class="state">Belum ada data roadmap yang dapat ditampilkan.</p>';
+    if (!list.length) {
+      container.innerHTML = '<p class="state-msg">Data roadmap belum tersedia.</p>';
       return;
     }
 
-    var limitAttr = container.getAttribute('data-limit');
-    var limit = limitAttr ? parseInt(limitAttr, 10) : 0;
+    container.innerHTML = list.map(itemMarkup).join('');
+    container.classList.add('stagger');
 
-    var visible = (limit && limit > 0) ? phases.slice(0, limit) : phases;
-    var iconPath = getBasePath() + 'assets/icons/check.svg';
-
-    container.innerHTML = visible.map(function (phase, index) {
-      return renderPhase(phase, index, iconPath);
-    }).join('');
-
-    container.setAttribute('data-roadmap-rendered', 'true');
-
-    /* Umumkan ke sistem reveal bila sudah siap */
-    document.dispatchEvent(new CustomEvent('apphub:roadmap-rendered', {
-      detail: { total: visible.length }
-    }));
+    if (window.AppHub && typeof window.AppHub.observeReveal === 'function') {
+      window.AppHub.observeReveal(container);
+    }
   }
 
-  function initContainer(container) {
-    if (container.getAttribute('data-roadmap-loading') === 'true') return;
-    container.setAttribute('data-roadmap-loading', 'true');
+  function init() {
+    var preview = document.querySelector('[data-roadmap="preview"]');
+    var full = document.querySelector('[data-roadmap="full"]');
 
-    fetch(getBasePath() + 'data/roadmap.json', { cache: 'no-cache' })
-      .then(function (response) {
-        if (!response.ok) throw new Error('HTTP ' + response.status);
-        return response.json();
+    if (!preview && !full) return;
+
+    fetch(ROADMAP_URL, { cache: 'no-cache' })
+      .then(function (res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        return res.json();
       })
       .then(function (data) {
-        if (!data || typeof data !== 'object') {
-          throw new Error('Format data roadmap tidak valid.');
-        }
-        render(container, data);
+        var items = (data && data.phases) || [];
+
+        if (preview) render(preview, items, 3);
+        if (full) render(full, items, 0);
       })
-      .catch(function (error) {
-        console.warn('[AppHub] Gagal memuat roadmap.json:', error.message);
-        showError(container, 'Data roadmap belum dapat dimuat saat ini.');
+      .catch(function (err) {
+        console.warn('[AppHub] Gagal memuat roadmap:', err.message);
+
+        var message = '<p class="state-msg">Data roadmap belum dapat dimuat saat ini. ' +
+          'Silakan muat ulang halaman.</p>';
+
+        if (preview) preview.innerHTML = message;
+        if (full) full.innerHTML = message;
       });
   }
 
-  function initAll() {
-    var containers = document.querySelectorAll('[data-roadmap]');
-    Array.prototype.forEach.call(containers, initContainer);
-  }
-
-  function boot() {
-    var ready = window.AppHub && window.AppHub.ready
-      ? window.AppHub.ready
-      : Promise.resolve();
-
-    ready.then(initAll);
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', boot);
+  if (window.AppHub && window.AppHub.ready) {
+    init();
   } else {
-    boot();
+    document.addEventListener('apphub:ready', init);
   }
 })();
