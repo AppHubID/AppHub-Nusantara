@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id" data-base="../">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pemesanan Paket — AppHub.ID</title>
+<meta name="description" content="Halaman pemesanan paket langganan AppHub.ID. Pemesanan dan konfirmasi dilakukan melalui kontak resmi AppHub.ID.">
+<meta name="theme-color" content="#070b14">
+<link rel="icon" type="image/png" href="../assets/images/favicon.png">
+<link rel="canonical" href="https://apphubid.github.io/subscription/checkout.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AppHub.ID">
+<meta property="og:title" content="Pemesanan Paket — AppHub.ID">
+<meta property="og:description" content="Pemesanan paket langganan AppHub.ID melalui kontak resmi.">
+<meta property="og:url" content="https://apphubid.github.io/subscription/checkout.html">
+<meta property="og:image" content="https://apphubid.github.io/assets/images/og-image.png">
+<meta property="og:locale" content="id_ID">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pemesanan Paket — AppHub.ID">
+<meta name="twitter:description" content="Pemesanan paket langganan AppHub.ID melalui kontak resmi.">
+<meta name="twitter:image" content="https://apphubid.github.io/assets/images/og-image.png">
+
+<link rel="preload" href="../assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/responsive.css">
+<link rel="stylesheet" href="../assets/css/animations.css">
+</head>
+<body>
+
+<div data-component="navbar"></div>
+
+<main id="main">
+
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Beranda</a>
+        <span aria-hidden="true">/</span>
+        <a href="index.html">Paket Langganan</a>
+        <span aria-hidden="true">/</span>
+        <span>Pemesanan</span>
+      </nav>
+      <h1 class="section-title">Pemesanan Paket</h1>
+      <p class="section-desc">
+        Halaman ini merupakan ringkasan pemesanan. Pembayaran dan konfirmasi dilakukan
+        melalui kontak resmi AppHub.ID.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="plan-switcher" id="planSwitcher" aria-label="Pilih paket"></div>
+
+      <div class="promo-banner" data-promo-banner>
+        <img src="../assets/icons/gift.svg" alt="" width="18" height="18">
+        <span>Harga promo tersedia hingga <strong>30 November 2026</strong>.</span>
+      </div>
+
+      <div class="detail-layout">
+
+        <div class="detail-panel" id="summaryPanel" aria-live="polite">
+          <div class="skeleton" style="height:280px;"></div>
+        </div>
+
+        <aside class="detail-side">
+          <div class="detail-panel">
+            <h2 class="plan-name" style="font-size:1rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);">Pemesanan</h2>
+            <p class="plan-tag" style="margin-bottom:20px;">
+              Pilih kanal kontak resmi di bawah ini untuk melanjutkan pemesanan paket
+              <strong id="contactPlanName">—</strong>.
+            </p>
+
+            <div class="plan-actions">
+              <a class="btn btn-primary btn-block" id="contactWa" href="https://wa.me/6288970200455" target="_blank" rel="noopener">
+                <img src="../assets/icons/whatsapp.svg" alt="" width="18" height="18" class="icon-sm">
+                Pesan via WhatsApp
+              </a>
+              <a class="btn btn-ghost btn-block" id="contactMail" href="mailto:apphubid@gmail.com">
+                <img src="../assets/icons/gmail.svg" alt="" width="18" height="18" class="icon-sm">
+                Pesan via Gmail
+              </a>
+              <a class="btn btn-ghost btn-block" id="backToDetail" href="detail.html">Lihat Detail Paket</a>
+            </div>
+
+            <p class="note-inline" style="margin-top:20px;">
+              Pembayaran dan konfirmasi dilakukan melalui kontak resmi AppHub.ID.
+              Halaman ini tidak memproses transaksi dan tidak membuat akun secara otomatis.
+            </p>
+          </div>
+        </aside>
+
+      </div>
+
+      <p class="note-inline">
+        Pesan WhatsApp dan email akan dibuat secara otomatis sesuai paket yang Anda pilih.
+        Anda tetap dapat mengubah isi pesan sebelum mengirimkannya.
+      </p>
+
+    </div>
+  </section>
+
+</main>
+
+<div data-component="footer"></div>
+
+<div class="toast-stack" id="toastStack" aria-live="polite" aria-atomic="true"></div>
+
+<script src="../assets/js/main.js" defer></script>
+<script src="../assets/js/notifications.js" defer></script>
+<script>
+(function () {
+  'use strict';
+
+  var BASE = (window.AppHub && window.AppHub.base) || '';
+
+  var PLANS = {
+    free: {
+      id: 'free', name: 'FREE', icon: 'gift.svg',
+      tag: 'Untuk mencoba layanan', period: '24 jam',
+      normalIdr: 'Gratis', normalUsd: 'Free',
+      promoIdr: null, promoUsd: null,
+      highlights: [
+        'Akses selama 24 jam',
+        'Update dengan keterlambatan maksimal 5 menit',
+        '1× pembuatan website HTML gratis'
+      ]
+    },
+    basic: {
+      id: 'basic', name: 'BASIC', icon: 'box.svg',
+      tag: 'Untuk kebutuhan ringan', period: '7 hari',
+      normalIdr: 'Rp200.000', normalUsd: '$11,18',
+      promoIdr: null, promoUsd: null,
+      highlights: [
+        'Update dengan keterlambatan maksimal 2 menit',
+        '300 Free Points',
+        'Termasuk seluruh benefit paket Free'
+      ]
+    },
+    standard: {
+      id: 'standard', name: 'STANDARD', icon: 'star.svg',
+      tag: 'Untuk penggunaan rutin', period: '1 bulan',
+      normalIdr: 'Rp1.000.000', normalUsd: '$55,90',
+      promoIdr: null, promoUsd: null,
+      highlights: [
+        'Fresh Update',
+        '450 Free Points',
+        'Diskon 10%',
+        '1× Free Domain',
+        '1× pembuatan website gratis'
+      ]
+    },
+    pro: {
+      id: 'pro', name: 'PRO', icon: 'crown.svg',
+      tag: 'Untuk kebutuhan intensif', period: '6 bulan',
+      normalIdr: 'Rp3.500.000', normalUsd: '$195,66', normalPeriod: '2 bulan',
+      promoIdr: 'Rp2.599.999', promoUsd: '$145,34',
+      highlights: [
+        '500 Free Points',
+        'Diskon 15%',
+        '1× Free Landing Page Website untuk UMKM',
+        '1× Free Revision',
+        '500 Free Coding Prompts'
+      ]
+    },
+    lifetime: {
+      id: 'lifetime', name: 'LIFETIME', icon: 'infinity.svg',
+      tag: 'Akses jangka panjang', period: 'Lifetime',
+      normalIdr: 'Rp10.000.000', normalUsd: '$559,02',
+      promoIdr: 'Rp7.999.999', promoUsd: '$447,21',
+      highlights: [
+        'Official Reseller',
+        'Akses website sebagai Admin',
+        'Diskon 40%',
+        'Free Website Training',
+        'Bebas request website'
+      ]
+    }
+  };
+
+  var ORDER = ['free', 'basic', 'standard', 'pro', 'lifetime'];
+
+  function esc(value) {
+    return String(value == null ? '' : value)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+
+  function titleCase(value) {
+    return String(value).charAt(0).toUpperCase() + String(value).slice(1).toLowerCase();
+  }
+
+  function isPromoActive() {
+    if (window.AppHub && typeof window.AppHub.isPromoActive === 'function') {
+      return window.AppHub.isPromoActive();
+    }
+    return Date.now() <= new Date('2026-11-30T23:59:59+07:00').getTime();
+  }
+
+  function currentPlanId() {
+    var params = new URLSearchParams(window.location.search);
+    var plan = (params.get('plan') || 'free').toLowerCase();
+    return PLANS[plan] ? plan : 'free';
+  }
+
+  function renderSwitcher(activeId) {
+    var el = document.getElementById('planSwitcher');
+    if (!el) return;
+    el.innerHTML = ORDER.map(function (id) {
+      return '<a href="checkout.html?plan=' + esc(id) + '"' +
+        (id === activeId ? ' class="is-active" aria-current="page"' : '') + '>' +
+        esc(PLANS[id].name) + '</a>';
+    }).join('');
+  }
+
+  function renderSummary(planId) {
+    var plan = PLANS[planId];
+    var panel = document.getElementById('summaryPanel');
+    if (!panel) return;
+
+    var promoActive = isPromoActive();
+    var hasPromo = !!plan.promoIdr && promoActive;
+
+    var priceText = hasPromo
+      ? plan.promoIdr + ' / ' + plan.period
+      : plan.normalIdr + ' / ' + (plan.normalPeriod || plan.period);
+
+    var promoText;
+    if (!plan.promoIdr) {
+      promoText = 'Tidak ada harga promo untuk paket ini';
+    } else if (promoActive) {
+      promoText = 'Aktif — berlaku sampai 30 November 2026';
+    } else {
+      promoText = 'Berakhir pada 30 November 2026';
+    }
+
+    var highlightsHtml = plan.highlights.map(function (text) {
+      return '<li><img src="' + BASE + 'assets/icons/check.svg" alt="" width="16" height="16">' +
+        '<span>' + esc(text) + '</span></li>';
+    }).join('');
+
+    panel.innerHTML = '' +
+      '<div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:20px;">' +
+        '<img class="plan-icon" style="margin-bottom:0;" src="' + BASE + 'assets/icons/' + esc(plan.icon) + '" alt="" width="46" height="46">' +
+        '<div>' +
+          '<h2 class="plan-name" style="margin-bottom:2px;">' + esc(plan.name) + '</h2>' +
+          '<p class="plan-tag" style="margin:0;">' + esc(plan.tag) + '</p>' +
+        '</div>' +
+      '</div>' +
+
+      '<div class="summary-row"><span>Paket</span><span>' + esc(plan.name) + '</span></div>' +
+      '<div class="summary-row"><span>Harga</span><span>' + esc(priceText) + '</span></div>' +
+      '<div class="summary-row"><span>Masa langganan</span><span>' + esc(plan.period) + '</span></div>' +
+      '<div class="summary-row"><span>Promo</span><span>' + esc(promoText) + '</span></div>' +
+      (hasPromo
+        ? '<div class="summary-row"><span>Harga normal</span><span style="text-decoration:line-through;opacity:0.7;">' +
+            esc(plan.normalIdr + ' / ' + (plan.normalPeriod || plan.period)) + '</span></div>'
+        : '') +
+
+      '<div class="benefit-group" style="margin-top:26px;">' +
+        '<h3 class="benefit-group-title">Benefit Utama</h3>' +
+        '<ul class="benefit-list">' + highlightsHtml + '</ul>' +
+      '</div>' +
+
+      '<p class="note-inline" style="margin-top:6px;">' +
+        'Ringkasan ini bersifat informatif. Rincian lengkap seluruh benefit tersedia pada ' +
+        'halaman <a href="detail.html?plan=' + esc(plan.id) + '" style="color:var(--accent);">Detail Paket</a>.' +
+      '</p>';
+
+    var nameEl = document.getElementById('contactPlanName');
+    if (nameEl) nameEl.textContent = plan.name;
+
+    var wa = document.getElementById('contactWa');
+    var mail = document.getElementById('contactMail');
+    var detail = document.getElementById('backToDetail');
+
+    var waMessage = 'Halo AppHub.ID, saya ingin berlangganan paket ' + plan.name + '.';
+    var mailSubject = 'Pesanan Paket ' + titleCase(plan.name) + ' - AppHub.ID';
+    var mailBody = 'Halo AppHub.ID,\n\nSaya ingin berlangganan paket ' + plan.name +
+      ' dengan rincian sebagai berikut:\n' +
+      '- Harga: ' + priceText + '\n' +
+      '- Masa langganan: ' + plan.period + '\n\n' +
+      'Mohon informasi selanjutnya mengenai proses pemesanan dan pembayaran.\n\nTerima kasih.';
+
+    if (wa) wa.href = 'https://wa.me/6288970200455?text=' + encodeURIComponent(waMessage);
+    if (mail) mail.href = 'mailto:apphubid@gmail.com?subject=' + encodeURIComponent(mailSubject) +
+      '&body=' + encodeURIComponent(mailBody);
+    if (detail) detail.href = 'detail.html?plan=' + encodeURIComponent(plan.id);
+  }
+
+  var planId = currentPlanId();
+  renderSwitcher(planId);
+  renderSummary(planId);
+
+  document.addEventListener('apphub:ready', function () {
+    renderSummary(planId);
+  });
+})();
+</script>
+</body>
+</html>

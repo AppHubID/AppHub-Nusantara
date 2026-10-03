@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="id" data-base="../">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Detail Paket — AppHub.ID</title>
+<meta name="description" content="Detail lengkap paket langganan AppHub.ID: harga, masa berlaku, seluruh benefit, dan benefit yang tidak termasuk.">
+<meta name="theme-color" content="#070b14">
+<link rel="icon" type="image/png" href="../assets/images/favicon.png">
+<link rel="canonical" href="https://apphubid.github.io/subscription/detail.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AppHub.ID">
+<meta property="og:title" content="Detail Paket — AppHub.ID">
+<meta property="og:description" content="Detail lengkap paket langganan AppHub.ID.">
+<meta property="og:url" content="https://apphubid.github.io/subscription/detail.html">
+<meta property="og:image" content="https://apphubid.github.io/assets/images/og-image.png">
+<meta property="og:locale" content="id_ID">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Detail Paket — AppHub.ID">
+<meta name="twitter:description" content="Detail lengkap paket langganan AppHub.ID.">
+<meta name="twitter:image" content="https://apphubid.github.io/assets/images/og-image.png">
+
+<link rel="preload" href="../assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/responsive.css">
+<link rel="stylesheet" href="../assets/css/animations.css">
+</head>
+<body>
+
+<div data-component="navbar"></div>
+
+<main id="main">
+
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Beranda</a>
+        <span aria-hidden="true">/</span>
+        <a href="index.html">Paket Langganan</a>
+        <span aria-hidden="true">/</span>
+        <span>Detail Paket</span>
+      </nav>
+      <h1 class="section-title" id="detailTitle">Detail Paket</h1>
+      <p class="section-desc" id="detailSubtitle">Rincian lengkap benefit, harga, dan masa berlaku.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="plan-switcher" id="planSwitcher" aria-label="Pilih paket"></div>
+
+      <div class="promo-banner" data-promo-banner>
+        <img src="../assets/icons/gift.svg" alt="" width="18" height="18">
+        <span>Harga promo tersedia hingga <strong>30 November 2026</strong>.</span>
+      </div>
+
+      <div class="detail-layout">
+
+        <div class="detail-panel" id="detailPanel" aria-live="polite">
+          <div class="skeleton" style="height:300px;"></div>
+        </div>
+
+        <aside class="detail-side">
+          <div class="detail-panel">
+            <h2 class="plan-name" style="font-size:1rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);">Ringkasan</h2>
+
+            <div class="summary-row">
+              <span>Paket</span>
+              <span id="sideName">—</span>
+            </div>
+            <div class="summary-row">
+              <span>Harga</span>
+              <span id="sidePrice">—</span>
+            </div>
+            <div class="summary-row">
+              <span>Masa berlaku</span>
+              <span id="sidePeriod">—</span>
+            </div>
+            <div class="summary-row">
+              <span>Status promo</span>
+              <span id="sidePromo">—</span>
+            </div>
+
+            <div class="plan-actions" style="margin-top:24px;">
+              <a class="btn btn-primary btn-block" id="sideWa" href="https://wa.me/6288970200455" target="_blank" rel="noopener">
+                <img src="../assets/icons/whatsapp.svg" alt="" width="18" height="18" class="icon-sm">
+                Pesan via WhatsApp
+              </a>
+              <a class="btn btn-ghost btn-block" id="sideMail" href="mailto:apphubid@gmail.com">
+                <img src="../assets/icons/gmail.svg" alt="" width="18" height="18" class="icon-sm">
+                Pesan via Gmail
+              </a>
+              <a class="btn btn-ghost btn-block" id="sideCheckout" href="checkout.html">Halaman Pemesanan</a>
+            </div>
+
+            <p class="note-inline" style="margin-top:20px;">
+              Pemesanan dan konfirmasi dilakukan melalui kontak resmi AppHub.ID. Belum ada
+              payment gateway otomatis pada situs ini.
+            </p>
+          </div>
+        </aside>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<div data-component="footer"></div>
+
+<div class="toast-stack" id="toastStack" aria-live="polite" aria-atomic="true"></div>
+
+<script src="../assets/js/main.js" defer></script>
+<script src="../assets/js/notifications.js" defer></script>
+<script>
+(function () {
+  'use strict';
+
+  var BASE = (window.AppHub && window.AppHub.base) || '';
+
+  var BENEFITS = {
+    free: [
+      'Akses selama 24 jam',
+      'Update dengan keterlambatan maksimal 5 menit',
+      '1× pembuatan website HTML gratis'
+    ],
+    basic: [
+      'Update dengan keterlambatan maksimal 2 menit',
+      '300 Free Points'
+    ],
+    standard: [
+      'Fresh Update',
+      '450 Free Points',
+      'Diskon 10%',
+      '1× Free Domain',
+      '1× pembuatan website gratis'
+    ],
+    pro: [
+      '500 Free Points',
+      'Diskon 15%',
+      '1× Free Landing Page Website untuk UMKM',
+      '1× Free Revision',
+      '500 Free Coding Prompts'
+    ],
+    lifetime: [
+      'Official Reseller',
+      'Akses website sebagai Admin',
+      'Diskon 40%',
+      'Free Website Training',
+      'Free Domain',
+      'Free Database',
+      'Bebas request website',
+      'Free Template',
+      'Free download file PDF hingga 10×',
+      'Panduan mengelola website',
+      'Dan berbagai benefit lainnya'
+    ]
+  };
+
+  var INHERIT = {
+    free: ['free'],
+    basic: ['free', 'basic'],
+    standard: ['free', 'basic', 'standard'],
+    pro: ['free', 'basic', 'pro'],
+    lifetime: ['free', 'basic', 'pro', 'lifetime']
+  };
+
+  var PLANS = {
+    free: {
+      id: 'free', name: 'FREE', icon: 'gift.svg', order: 1,
+      tag: 'Untuk mencoba layanan',
+      period: '24 jam',
+      normalIdr: 'Gratis', normalUsd: 'Free',
+      promoIdr: null, promoUsd: null
+    },
+    basic: {
+      id: 'basic', name: 'BASIC', icon: 'box.svg', order: 2,
+      tag: 'Untuk kebutuhan ringan',
+      period: '7 hari',
+      normalIdr: 'Rp200.000', normalUsd: '$11,18',
+      promoIdr: null, promoUsd: null
+    },
+    standard: {
+      id: 'standard', name: 'STANDARD', icon: 'star.svg', order: 3,
+      tag: 'Untuk penggunaan rutin',
+      period: '1 bulan',
+      normalIdr: 'Rp1.000.000', normalUsd: '$55,90',
+      promoIdr: null, promoUsd: null
+    },
+    pro: {
+      id: 'pro', name: 'PRO', icon: 'crown.svg', order: 4,
+      tag: 'Untuk kebutuhan intensif',
+      period: '6 bulan (harga promo)',
+      normalIdr: 'Rp3.500.000', normalUsd: '$195,66',
+      normalPeriod: '2 bulan',
+      promoIdr: 'Rp2.599.999', promoUsd: '$145,34'
+    },
+    lifetime: {
+      id: 'lifetime', name: 'LIFETIME', icon: 'infinity.svg', order: 5,
+      tag: 'Akses jangka panjang',
+      period: 'Lifetime',
+      normalIdr: 'Rp10.000.000', normalUsd: '$559,02',
+      promoIdr: 'Rp7.999.999', promoUsd: '$447,21'
+    }
+  };
+
+  var ORDER = ['free', 'basic', 'standard', 'pro', 'lifetime'];
+
+  function esc(value) {
+    return String(value == null ? '' : value)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+
+  function uniq(list) {
+    var seen = {};
+    return list.filter(function (item) {
+      if (seen[item]) return false;
+      seen[item] = true;
+      return true;
+    });
+  }
+
+  function fullBenefits(planId) {
+    var chain = INHERIT[planId] || [planId];
+    var out = [];
+    chain.forEach(function (key) {
+      out = out.concat(BENEFITS[key] || []);
+    });
+    return uniq(out);
+  }
+
+  function allBenefits() {
+    var out = [];
+    ORDER.forEach(function (key) {
+      out = out.concat(BENEFITS[key] || []);
+    });
+    return uniq(out);
+  }
+
+  function excludedBenefits(planId) {
+    var own = fullBenefits(planId);
+    return allBenefits().filter(function (item) {
+      return own.indexOf(item) === -1;
+    });
+  }
+
+  function titleCase(value) {
+    return String(value).charAt(0).toUpperCase() + String(value).slice(1).toLowerCase();
+  }
+
+  function isPromoActive() {
+    if (window.AppHub && typeof window.AppHub.isPromoActive === 'function') {
+      return window.AppHub.isPromoActive();
+    }
+    return Date.now() <= new Date('2026-11-30T23:59:59+07:00').getTime();
+  }
+
+  function currentPlanId() {
+    var params = new URLSearchParams(window.location.search);
+    var plan = (params.get('plan') || 'free').toLowerCase();
+    return PLANS[plan] ? plan : 'free';
+  }
+
+  function benefitList(items, excluded) {
+    return '<ul class="benefit-list' + (excluded ? ' is-excluded' : '') + '">' +
+      items.map(function (text) {
+        var icon = excluded ? 'x.svg' : 'check.svg';
+        return '<li><img src="' + BASE + 'assets/icons/' + icon + '" alt="" width="16" height="16">' +
+          '<span>' + esc(text) + '</span></li>';
+      }).join('') +
+      '</ul>';
+  }
+
+  function priceMarkup(plan) {
+    var promoActive = isPromoActive();
+    var hasPromo = !!plan.promoIdr && promoActive;
+
+    var mainIdr = hasPromo ? plan.promoIdr : plan.normalIdr;
+    var mainUsd = hasPromo ? plan.promoUsd : plan.normalUsd;
+
+    var html = '<div class="plan-price">';
+
+    if (hasPromo) {
+      html += '<span class="plan-price-was">' + esc(plan.normalIdr) + ' · ' + esc(plan.normalUsd) + '</span>';
+    }
+
+    html += '<span class="plan-price-main">' + esc(mainIdr) + '</span>';
+    html += '<span class="plan-price-usd">' + esc(mainUsd) + '</span>';
+    html += '<span class="plan-period">Masa akses: ' + esc(plan.period) + '</span>';
+
+    if (plan.promoIdr && !promoActive) {
+      html += '<span class="plan-period">Harga promo telah berakhir pada 30 November 2026.</span>';
+    }
+
+    html += '</div>';
+    return html;
+  }
+
+  function renderSwitcher(activeId) {
+    var el = document.getElementById('planSwitcher');
+    if (!el) return;
+    el.innerHTML = ORDER.map(function (id) {
+      return '<a href="detail.html?plan=' + esc(id) + '"' +
+        (id === activeId ? ' class="is-active" aria-current="page"' : '') + '>' +
+        esc(PLANS[id].name) + '</a>';
+    }).join('');
+  }
+
+  function renderDetail(planId) {
+    var plan = PLANS[planId];
+    var panel = document.getElementById('detailPanel');
+    var title = document.getElementById('detailTitle');
+    var subtitle = document.getElementById('detailSubtitle');
+    if (!panel) return;
+
+    var chain = INHERIT[planId] || [planId];
+    var excluded = excludedBenefits(planId);
+
+    var groupsHtml = chain.map(function (key) {
+      var source = PLANS[key];
+      var label = key === planId ? 'Benefit Paket ' + source.name : 'Diwarisi dari paket ' + source.name;
+      return '' +
+        '<div class="benefit-group">' +
+          '<h3 class="benefit-group-title">' + esc(label) + '</h3>' +
+          benefitList(BENEFITS[key] || [], false) +
+        '</div>';
+    }).join('');
+
+    var excludedHtml = excluded.length
+      ? '<div class="benefit-group">' +
+          '<h3 class="benefit-group-title">Tidak Termasuk dalam Paket ' + esc(plan.name) + '</h3>' +
+          benefitList(excluded, true) +
+        '</div>'
+      : '';
+
+    panel.innerHTML = '' +
+      '<div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:20px;">' +
+        '<img class="plan-icon" style="margin-bottom:0;" src="' + BASE + 'assets/icons/' + esc(plan.icon) + '" alt="" width="46" height="46">' +
+        '<div>' +
+          '<h2 class="plan-name" style="margin-bottom:2px;">' + esc(plan.name) + '</h2>' +
+          '<p class="plan-tag" style="margin:0;">' + esc(plan.tag) + '</p>' +
+        '</div>' +
+      '</div>' +
+      priceMarkup(plan) +
+      groupsHtml +
+      excludedHtml;
+
+    if (title) title.textContent = 'Paket ' + plan.name;
+    if (subtitle) subtitle.textContent = plan.tag + ' · Masa akses ' + plan.period + '.';
+  }
+
+  function renderSide(planId) {
+    var plan = PLANS[planId];
+    var promoActive = isPromoActive();
+    var hasPromo = !!plan.promoIdr && promoActive;
+
+    var priceText = hasPromo
+      ? plan.promoIdr + ' / ' + plan.period
+      : plan.normalIdr + (plan.normalPeriod ? ' / ' + plan.normalPeriod : ' / ' + plan.period);
+
+    var nameEl = document.getElementById('sideName');
+    var priceEl = document.getElementById('sidePrice');
+    var periodEl = document.getElementById('sidePeriod');
+    var promoEl = document.getElementById('sidePromo');
+
+    if (nameEl) nameEl.textContent = plan.name;
+    if (priceEl) priceEl.textContent = priceText;
+    if (periodEl) periodEl.textContent = plan.period;
+
+    if (promoEl) {
+      if (!plan.promoIdr) {
+        promoEl.textContent = 'Tidak ada promo';
+      } else if (promoActive) {
+        promoEl.textContent = 'Aktif hingga 30 November 2026';
+      } else {
+        promoEl.textContent = 'Berakhir 30 November 2026';
+      }
+    }
+
+    var wa = document.getElementById('sideWa');
+    var mail = document.getElementById('sideMail');
+    var checkout = document.getElementById('sideCheckout');
+
+    var waMessage = 'Halo AppHub.ID, saya ingin berlangganan paket ' + plan.name + '.';
+    var mailSubject = 'Pesanan Paket ' + titleCase(plan.name) + ' - AppHub.ID';
+    var mailBody = 'Halo AppHub.ID,\n\nSaya ingin berlangganan paket ' + plan.name +
+      ' (' + priceText + ').\n\nMohon informasi selanjutnya mengenai proses pemesanan.\n\nTerima kasih.';
+
+    if (wa) wa.href = 'https://wa.me/6288970200455?text=' + encodeURIComponent(waMessage);
+    if (mail) mail.href = 'mailto:apphubid@gmail.com?subject=' + encodeURIComponent(mailSubject) +
+      '&body=' + encodeURIComponent(mailBody);
+    if (checkout) checkout.href = 'checkout.html?plan=' + encodeURIComponent(planId);
+  }
+
+  var planId = currentPlanId();
+  renderSwitcher(planId);
+  renderDetail(planId);
+  renderSide(planId);
+
+  document.addEventListener('apphub:ready', function () {
+    renderSide(planId);
+  });
+})();
+</script>
+</body>
+</html>
