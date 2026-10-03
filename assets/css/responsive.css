@@ -1,242 +1,109 @@
 /* ==========================================================================
    AppHub.ID — responsive.css
-   Penyesuaian tata letak untuk tablet, mobile, dan layar besar.
    ========================================================================== */
 
-/* --------------------------------------------------------------------------
-   Layar besar (>= 1440px)
-   -------------------------------------------------------------------------- */
+/* Wide desktop */
 @media (min-width: 1440px) {
-  :root {
-    --container: 1240px;
-    --gutter: 32px;
-  }
-
-  .hero { padding-top: calc(var(--nav-h) + 120px); }
+  :root { --container: 1280px; }
+  .section { padding: 112px 0; }
 }
 
-/* --------------------------------------------------------------------------
-   Desktop kecil / Laptop (<= 1100px)
-   -------------------------------------------------------------------------- */
-@media (max-width: 1100px) {
-  .footer__top {
-    grid-template-columns: 1.4fr 1fr 1fr;
-    gap: 38px;
-  }
-
-  .footer__col--social {
-    grid-column: 1 / -1;
-  }
-
-  .contact-card {
-    padding: 44px 36px;
-    gap: 32px;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   Tablet (<= 900px)
-   -------------------------------------------------------------------------- */
-@media (max-width: 900px) {
-  :root {
-    --gutter: 22px;
-    --nav-h: 68px;
-  }
-
-  .section { padding: 84px 0; }
-
-  .hero { padding: calc(var(--nav-h) + 76px) 0 96px; }
-
-  .hero__logo { width: 82px; height: 82px; margin-bottom: 24px; }
-
-  .hero__actions { margin-top: 38px; }
-
-  .hero__scroll { margin-top: 56px; }
-
-  .countdown__grid { gap: 10px; }
-
-  .countdown__unit { padding: 22px 8px 17px; border-radius: var(--r-md); }
-
-  .countdown__label { font-size: 0.66rem; letter-spacing: 0.12em; }
-
-  .contact-card {
-    grid-template-columns: 1fr;
-    padding: 38px 30px;
-  }
-
-  .contact-card__actions {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  .footer { padding-top: 62px; }
-
-  .footer__top {
-    grid-template-columns: 1fr 1fr;
+/* Laptop */
+@media (max-width: 1080px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 34px;
-    padding-bottom: 44px;
   }
+  .detail-layout { grid-template-columns: 1fr; }
+  .detail-side { position: static; }
+}
 
-  .footer__col--brand { grid-column: 1 / -1; }
+/* Tablet */
+@media (max-width: 960px) {
+  .desktop-nav { display: none; }
+  .menu-btn { display: inline-flex; }
 
-  .update-item {
+  .section { padding: 76px 0; }
+  .hero { padding: 68px 0 56px; }
+
+  .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  .contact-panel {
     grid-template-columns: 1fr;
-    gap: 16px;
-    padding: 24px 22px;
+    padding: 32px;
+    gap: 26px;
   }
+  .contact-actions { flex-direction: row; flex-wrap: wrap; }
+  .contact-actions .btn { flex: 1 1 180px; }
 
-  .update-item__aside { flex-direction: row; align-items: center; }
+  .update-item { grid-template-columns: 1fr; gap: 12px; }
 
-  .page-header { padding: calc(var(--nav-h) + 68px) 0 52px; }
-
-  .info-row { grid-template-columns: 1fr; gap: 6px; }
+  .pricing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-/* --------------------------------------------------------------------------
-   Mobile besar (<= 720px)
-   -------------------------------------------------------------------------- */
+/* Mobile */
 @media (max-width: 720px) {
-  .navbar__cta { display: none; }
+  :root { --header-h: 64px; }
 
-  .nav-panel {
-    width: 100%;
-    padding: calc(var(--nav-h) + 20px) 22px 32px;
-    border-left: 0;
-    border-top: 1px solid var(--border);
-  }
+  .container { padding: 0 18px; }
 
-  .hero__title { letter-spacing: 0.01em; }
+  .section { padding: 60px 0; }
+  .hero { padding: 52px 0 44px; }
 
-  .hero__meta {
-    gap: 10px;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 38px;
-  }
+  .hero-logo { width: 76px; height: 76px; margin: 20px 0 18px; border-radius: 18px; }
+  .hero-actions { flex-direction: column; width: 100%; }
+  .hero-actions .btn { width: 100%; }
 
-  .hero__meta-divider { display: none; }
+  .grid-3 { grid-template-columns: 1fr; }
 
-  .hero__actions {
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
-    max-width: 360px;
-  }
+  .countdown { gap: 10px; }
+  .countdown-item { padding: 16px 6px; border-radius: 12px; }
+  .countdown-value { font-size: clamp(1.35rem, 8vw, 1.8rem); }
+  .countdown-unit { font-size: 0.62rem; letter-spacing: 0.1em; }
 
-  .hero__actions .btn { width: 100%; }
+  .section-head { margin-bottom: 32px; }
 
-  .product-grid { grid-template-columns: 1fr; }
+  .card { padding: 22px 20px; }
 
-  .roadmap--preview { grid-template-columns: 1fr; }
+  .roadmap-item { grid-template-columns: 42px minmax(0, 1fr); gap: 16px; }
+  .roadmap-marker { width: 42px; height: 42px; font-size: 0.82rem; }
+  .roadmap-item::before { left: 20px; top: 36px; }
+  .roadmap-body { padding: 18px; }
 
-  .section__head { margin-bottom: 40px; }
+  .contact-panel { padding: 26px 20px; border-radius: var(--radius); }
+  .contact-actions { flex-direction: column; }
 
-  .section__foot { margin-top: 36px; }
-  .section__foot .btn { width: 100%; max-width: 340px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 30px; padding-bottom: 30px; }
+  .site-footer { padding: 48px 0 24px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
 
-  .footer__top { grid-template-columns: 1fr; gap: 32px; }
+  .pricing-grid { grid-template-columns: 1fr; }
 
-  .footer__bottom {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
-  }
+  .detail-panel { padding: 24px 20px; }
 
-  .footer__legal { gap: 10px 18px; }
+  .toast-stack { right: 16px; left: 16px; bottom: 16px; max-width: none; }
 
-  .disclaimer { text-align: left; }
+  .plan-switcher { gap: 6px; }
+  .plan-switcher a { padding: 8px 13px; font-size: 0.76rem; }
 }
 
-/* --------------------------------------------------------------------------
-   Mobile (<= 520px)
-   -------------------------------------------------------------------------- */
-@media (max-width: 520px) {
-  :root {
-    --gutter: 18px;
-    --nav-h: 64px;
-  }
-
-  body { font-size: 15.5px; }
-
-  .section { padding: 68px 0; }
-
-  .hero { padding: calc(var(--nav-h) + 58px) 0 76px; }
-
-  .hero__logo { width: 72px; height: 72px; margin-bottom: 20px; }
-
-  .hero__title { font-size: clamp(2.1rem, 1.2rem + 8vw, 3.1rem); }
-
-  .hero__lead { font-size: 0.97rem; }
-
-  .badge { font-size: 0.68rem; padding: 7px 14px; letter-spacing: 0.12em; }
-
-  .countdown__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-
-  .countdown__value { font-size: 1.9rem; }
-
-  .countdown__unit { padding: 20px 8px 15px; }
-
-  .product-card,
-  .roadmap__item,
-  .about-card {
-    padding: 22px 20px;
-  }
-
-  .contact-card { padding: 30px 22px; border-radius: var(--r-lg); }
-
-  .contact-card__actions { flex-direction: column; }
-
-  .btn { --btn-py: 12px; --btn-px: 20px; font-size: 0.9rem; }
-
-  .update-item { padding: 20px 18px; }
-
-  .update-item__aside { flex-wrap: wrap; gap: 8px; }
-
-  .page-header { padding: calc(var(--nav-h) + 52px) 0 42px; }
-
-  .page-header__desc { font-size: 0.98rem; }
-
-  .footer__social-link { width: 40px; height: 40px; }
-
-  .footer__social-label { display: none; }
+/* Small mobile */
+@media (max-width: 400px) {
+  .brand-name { font-size: 1rem; }
+  .btn { padding: 11px 16px; font-size: 0.9rem; }
+  .countdown { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .countdown-item { padding: 18px 6px; }
+  .update-item { padding: 18px; }
+  .plan-card { padding: 24px 20px; }
 }
 
-/* --------------------------------------------------------------------------
-   Sangat kecil (<= 380px)
-   -------------------------------------------------------------------------- */
-@media (max-width: 380px) {
-  .countdown__value { font-size: 1.6rem; }
-  .countdown__label { font-size: 0.6rem; letter-spacing: 0.1em; }
-  .navbar__brand-text { font-size: 0.98rem; }
-}
-
-/* --------------------------------------------------------------------------
-   Orientasi landscape pada perangkat pendek
-   -------------------------------------------------------------------------- */
+/* Landscape pendek */
 @media (max-height: 520px) and (orientation: landscape) {
-  .nav-panel { padding-top: 88px; overflow-y: auto; }
-  .hero { padding-top: calc(var(--nav-h) + 40px); }
+  .hero { padding: 40px 0 32px; }
+  .hero-logo { width: 60px; height: 60px; margin: 12px 0 12px; }
 }
 
-/* --------------------------------------------------------------------------
-   Mode cetak
-   -------------------------------------------------------------------------- */
-@media print {
-  .navbar,
-  .nav-panel,
-  .nav-overlay,
-  .hero__glow,
-  .hero__grid-bg,
-  .hero__scroll,
-  .footer__social { display: none !important; }
-
-  body {
-    background: #ffffff;
-    color: #000000;
-  }
-
-  .section { padding: 24px 0; }
-}
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+   }
