@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "brand": "AppHub.ID",
+    "catatan": "Roadmap ini bersifat indikatif dan dapat berubah sewaktu-waktu. Status diperbarui secara berkala sesuai progres pengembangan yang sebenarnya.",
+    "diperbarui": "2026-01-01"
+  },
+  "phases": [
+    {
+      "id": "persiapan",
+      "fase": "01",
+      "nama": "Persiapan",
+      "status": "Sedang Berjalan",
+      "deskripsi": "Penetapan identitas brand, arah platform, struktur kategori, dan penyiapan kanal komunikasi resmi AppHub.ID.",
+      "poin": [
+        "Identitas visual dan logo AppHub.ID",
+        "Penentuan arah dan posisi platform",
+        "Penyusunan struktur kategori produk",
+        "Penyiapan kanal komunikasi resmi"
+      ]
+    },
+    {
+      "id": "pengembangan",
+      "fase": "02",
+      "nama": "Pengembangan",
+      "status": "Direncanakan",
+      "deskripsi": "Pembangunan antarmuka situs, sistem katalog, dan fondasi teknis yang akan digunakan saat peluncuran.",
+      "poin": [
+        "Pembangunan antarmuka situs utama",
+        "Struktur katalog dan navigasi",
+        "Fondasi teknis dan performa",
+        "Sistem pembaruan internal"
+      ]
+    },
+    {
+      "id": "penyempurnaan",
+      "fase": "03",
+      "nama": "Penyempurnaan",
+      "status": "Direncanakan",
+      "deskripsi": "Perbaikan detail visual, konsistensi konten, serta penyelarasan pengalaman pengguna di seluruh halaman.",
+      "poin": [
+        "Penyelarasan visual dan tipografi",
+        "Perbaikan alur pengguna",
+        "Konsistensi bahasa dan konten",
+        "Optimasi aksesibilitas"
+      ]
+    },
+    {
+      "id": "pengujian",
+      "fase": "04",
+      "nama": "Pengujian",
+      "status": "Direncanakan",
+      "deskripsi": "Pengujian menyeluruh pada berbagai perangkat dan ukuran layar sebelum platform dinyatakan siap.",
+      "poin": [
+        "Pengujian lintas perangkat",
+        "Pemeriksaan tautan dan navigasi",
+        "Validasi performa halaman",
+        "Pemeriksaan akhir sebelum rilis"
+      ]
+    },
+    {
+      "id": "peluncuran",
+      "fase": "05",
+      "nama": "Peluncuran",
+      "status": "Direncanakan",
+      "deskripsi": "Peresmian AppHub.ID dan pembukaan akses platform untuk publik pada tanggal yang telah ditetapkan.",
+      "poin": [
+        "Peresmian platform AppHub.ID",
+        "Pembukaan akses publik",
+        "Publikasi katalog awal",
+        "Pembukaan kanal masukan pengguna"
+      ]
+    }
+  ]
+}

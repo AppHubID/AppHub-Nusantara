@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "brand": "AppHub.ID",
+    "catatan": "Seluruh entri berikut merupakan catatan pengembangan internal AppHub.ID dan bukan klaim aktivitas pihak ketiga.",
+    "diperbarui": "2026-01-01"
+  },
+  "updates": [
+    {
+      "id": "u-003",
+      "tanggal": "2026-01-01",
+      "kategori": "Website",
+      "judul": "Halaman Coming Soon AppHub.ID aktif",
+      "isi": "Halaman resmi Coming Soon AppHub.ID telah dipublikasikan. Halaman ini menampilkan tanggal peluncuran, hitung mundur, ringkasan kategori, serta pratinjau roadmap dan pembaruan."
+    },
+    {
+      "id": "u-002",
+      "tanggal": "2026-01-01",
+      "kategori": "Perencanaan",
+      "judul": "Struktur kategori dan roadmap disusun",
+      "isi": "Daftar kategori yang sedang dipersiapkan beserta tahapan roadmap telah disusun dan disimpan dalam format data terpisah agar mudah diperbarui."
+    },
+    {
+      "id": "u-001",
+      "tanggal": "2026-01-01",
+      "kategori": "Komunitas",
+      "judul": "Kanal komunikasi resmi disiapkan",
+      "isi": "Kanal komunikasi resmi AppHub.ID mulai disiapkan, meliputi email, WhatsApp, Discord, Facebook, dan GitHub. Kanal lain akan menyusul."
+    }
+  ]
+}
