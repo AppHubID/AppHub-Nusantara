@@ -1,154 +1,112 @@
 <!DOCTYPE html>
-<html lang="id" data-base="../">
+<html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pembaruan — AppHub.ID</title>
-<meta name="description" content="Catatan pembaruan dan perkembangan proyek AppHub.ID secara transparan.">
-<meta name="theme-color" content="#070b14">
-<link rel="icon" type="image/png" href="../assets/images/favicon.png">
-<link rel="canonical" href="https://apphubid.github.io/pages/updates.html">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="base-path" content="../">
+  <meta name="theme-color" content="#07070c">
 
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="AppHub.ID">
-<meta property="og:title" content="Pembaruan — AppHub.ID">
-<meta property="og:description" content="Catatan pembaruan dan perkembangan proyek AppHub.ID.">
-<meta property="og:url" content="https://apphubid.github.io/pages/updates.html">
-<meta property="og:image" content="https://apphubid.github.io/assets/images/og-image.png">
-<meta property="og:locale" content="id_ID">
+  <title>Pembaruan — AppHub.ID</title>
+  <meta name="description" content="Catatan pengembangan dan pembaruan terbaru seputar AppHub.ID, platform digital yang segera hadir pada 30 Desember 2026.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://apphubid.github.io/AppHub-Nusantara/pages/updates.html">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Pembaruan — AppHub.ID">
-<meta name="twitter:description" content="Catatan pembaruan dan perkembangan proyek AppHub.ID.">
-<meta name="twitter:image" content="https://apphubid.github.io/assets/images/og-image.png">
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="../assets/images/favicon.png">
 
-<link rel="preload" href="../assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../assets/css/style.css">
-<link rel="stylesheet" href="../assets/css/responsive.css">
-<link rel="stylesheet" href="../assets/css/animations.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AppHub.ID">
+  <meta property="og:title" content="Pembaruan — AppHub.ID">
+  <meta property="og:description" content="Catatan pengembangan dan pembaruan terbaru AppHub.ID.">
+  <meta property="og:url" content="https://apphubid.github.io/AppHub-Nusantara/pages/updates.html">
+  <meta property="og:image" content="https://apphubid.github.io/AppHub-Nusantara/assets/images/og-image.png">
+  <meta property="og:locale" content="id_ID">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pembaruan — AppHub.ID">
+  <meta name="twitter:description" content="Catatan pengembangan dan pembaruan terbaru AppHub.ID.">
+  <meta name="twitter:image" content="https://apphubid.github.io/AppHub-Nusantara/assets/images/og-image.png">
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
 </head>
-<body>
 
-<div data-component="navbar"></div>
+<body data-page="updates">
+  <a class="skip-link" href="#main">Lewati ke konten utama</a>
 
-<main id="main">
+  <div data-component="navbar"></div>
 
-  <section class="page-header">
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="../index.html">Beranda</a>
-        <span aria-hidden="true">/</span>
-        <span>Pembaruan</span>
-      </nav>
-      <h1 class="section-title">Pembaruan AppHub.ID</h1>
-      <p class="section-desc">
-        Catatan perkembangan proyek AppHub.ID. Setiap entri mencantumkan tanggal, judul,
-        deskripsi, dan status secara terbuka.
-      </p>
-    </div>
-  </section>
+  <main id="main">
 
-  <section class="section">
-    <div class="container">
-      <div class="updates-list" id="updatesFull" aria-live="polite">
-        <div class="skeleton"></div>
-        <div class="skeleton"></div>
-        <div class="skeleton"></div>
+    <header class="page-header">
+      <div class="page-header__glow" aria-hidden="true"></div>
+      <div class="container page-header__inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Beranda</a>
+          <img class="icon" src="../assets/icons/arrow-right.svg" alt="" width="14" height="14" aria-hidden="true">
+          <span aria-current="page">Pembaruan</span>
+        </nav>
+
+        <h1 class="page-header__title">Pembaruan</h1>
+        <p class="page-header__desc">
+          Semua catatan pengembangan AppHub.ID dikumpulkan di sini secara terbuka.
+          Kami hanya menuliskan hal yang benar-benar dikerjakan.
+        </p>
       </div>
+    </header>
 
-      <p class="note-inline">
-        Daftar pembaruan diperbarui secara manual oleh tim AppHub.ID. Tidak ada sistem
-        notifikasi otomatis yang berjalan di balik halaman ini.
-      </p>
-    </div>
-  </section>
+    <section class="section" aria-labelledby="pembaruan-title">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Catatan Pengembangan</p>
+          <h2 class="section__title" id="pembaruan-title">Riwayat pembaruan</h2>
+          <p class="section__desc">
+            Daftar berikut dimuat langsung dari data pembaruan resmi AppHub.ID.
+          </p>
+        </header>
 
-</main>
+        <div class="updates" data-updates>
+          <p class="state state--loading">Memuat pembaruan…</p>
+        </div>
+      </div>
+    </section>
 
-<div data-component="footer"></div>
+    <section class="section section--alt" aria-labelledby="kanal-title">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div class="contact-card__body">
+            <p class="eyebrow">Kanal Resmi</p>
+            <h2 class="contact-card__title" id="kanal-title">Ikuti kabar terbaru dari kanal resmi kami</h2>
+            <p class="contact-card__desc">
+              Pembaruan besar akan kami sampaikan melalui kanal komunikasi resmi AppHub.ID.
+              Bergabunglah di Discord untuk mengikuti perkembangan secara langsung.
+            </p>
+          </div>
 
-<div class="toast-stack" id="toastStack" aria-live="polite" aria-atomic="true"></div>
+          <div class="contact-card__actions">
+            <a class="btn btn--primary"
+               href="https://discord.gg/JDeCkT4Qj"
+               target="_blank" rel="noopener noreferrer">
+              <img class="icon" src="../assets/icons/discord.svg" alt="" width="16" height="16" aria-hidden="true">
+              Gabung Discord
+            </a>
+            <a class="btn btn--ghost" href="mailto:apphubid@gmail.com">
+              <img class="icon" src="../assets/icons/gmail.svg" alt="" width="16" height="16" aria-hidden="true">
+              Kirim Email
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<script src="../assets/js/main.js" defer></script>
-<script src="../assets/js/notifications.js" defer></script>
-<script>
-(function () {
-  'use strict';
+  </main>
 
-  function init() {
-    var BASE = (window.AppHub && window.AppHub.base) || '';
-    var container = document.getElementById('updatesFull');
-    if (!container) return;
+  <div data-component="footer"></div>
 
-    var esc = (window.AppHub && window.AppHub.escapeHtml) || function (v) {
-      return String(v == null ? '' : v)
-        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
-    };
-
-    function formatDate(value) {
-      var parts = String(value).split('-');
-      if (parts.length !== 3) return value;
-      var months = ['Januari','Februari','Maret','April','Mei','Juni','Juli',
-                    'Agustus','September','Oktober','November','Desember'];
-      var monthIndex = parseInt(parts[1], 10) - 1;
-      if (monthIndex < 0 || monthIndex > 11) return value;
-      return parseInt(parts[2], 10) + ' ' + months[monthIndex] + ' ' + parts[0];
-    }
-
-    function statusPill(status) {
-      return '<span class="status" data-status="' + esc(status) + '">' +
-        '<span class="status-dot" aria-hidden="true"></span>' + esc(status) + '</span>';
-    }
-
-    fetch(BASE + 'data/updates.json', { cache: 'no-cache' })
-      .then(function (res) {
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        return res.json();
-      })
-      .then(function (data) {
-        var items = (data && data.updates) || [];
-
-        if (!items.length) {
-          container.innerHTML = '<p class="state-msg">Belum ada pembaruan yang dipublikasikan.</p>';
-          return;
-        }
-
-        items.sort(function (a, b) {
-          return String(b.date).localeCompare(String(a.date));
-        });
-
-        container.innerHTML = items.map(function (item) {
-          return '' +
-            '<article class="update-item">' +
-              '<div class="update-date">' +
-                '<img src="' + BASE + 'assets/icons/calendar.svg" alt="" width="15" height="15">' +
-                '<time datetime="' + esc(item.date) + '">' + esc(formatDate(item.date)) + '</time>' +
-              '</div>' +
-              '<div>' +
-                '<div class="update-head">' +
-                  '<h2 class="update-title">' + esc(item.title) + '</h2>' +
-                  statusPill(item.status) +
-                '</div>' +
-                '<p class="update-desc">' + esc(item.description) + '</p>' +
-              '</div>' +
-            '</article>';
-        }).join('');
-
-        container.classList.add('stagger');
-      })
-      .catch(function (err) {
-        console.warn('[AppHub] Gagal memuat pembaruan:', err.message);
-        container.innerHTML = '<p class="state-msg">Data pembaruan belum dapat dimuat saat ini. Silakan muat ulang halaman.</p>';
-      });
-  }
-
-  if (window.AppHub && window.AppHub.ready) {
-    init();
-  } else {
-    document.addEventListener('apphub:ready', init);
-  }
-})();
-</script>
+  <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/countdown.js" defer></script>
+  <script src="../assets/js/roadmap.js" defer></script>
+  <script src="../assets/js/notifications.js" defer></script>
 </body>
 </html>
