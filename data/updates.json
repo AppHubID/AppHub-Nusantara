@@ -1,40 +1,37 @@
 {
-  "updated": "2026-01-05",
+  "meta": {
+    "brand": "AppHub.ID",
+    "catatan": "Seluruh entri berikut merupakan catatan pengembangan internal AppHub.ID dan bukan klaim aktivitas pihak ketiga.",
+    "diperbarui": "2026-01-01"
+  },
   "updates": [
     {
-      "id": "update-005",
-      "date": "2026-01-05",
-      "title": "Halaman Paket Langganan Disiapkan",
-      "description": "Struktur lima paket langganan (Free, Basic, Standard, Pro, Lifetime) beserta rincian benefit mulai disusun pada halaman terpisah.",
-      "status": "Sedang Dipersiapkan"
+      "id": "u-004",
+      "tanggal": "2026-10-04",
+      "kategori": "Paket",
+      "judul": "Halaman paket langganan mulai dipublikasikan",
+      "isi": "Halaman paket langganan AppHub.ID mulai ditampilkan sebagai informasi awal. Rincian paket, harga, dan benefit masih dapat berubah sebelum peluncuran resmi."
     },
     {
-      "id": "update-004",
-      "date": "2026-01-05",
-      "title": "Halaman Roadmap dan Pembaruan Ditambahkan",
-      "description": "Halaman khusus roadmap dan pembaruan disiapkan agar perkembangan proyek dapat dipantau secara transparan.",
-      "status": "Sedang Dipersiapkan"
+      "id": "u-003",
+      "tanggal": "2026-10-03",
+      "kategori": "Website",
+      "judul": "Halaman Coming Soon AppHub.ID aktif",
+      "isi": "Halaman resmi Coming Soon AppHub.ID telah dipublikasikan. Halaman ini menampilkan tanggal peluncuran, hitung mundur, ringkasan kategori, serta pratinjau roadmap dan pembaruan."
     },
     {
-      "id": "update-003",
-      "date": "2026-01-05",
-      "title": "Countdown Peluncuran Diaktifkan",
-      "description": "Countdown realtime menuju 30 Desember 2026 pukul 00:00 WIB ditampilkan pada halaman utama.",
-      "status": "Selesai"
+      "id": "u-002",
+      "tanggal": "2026-10-01",
+      "kategori": "Perencanaan",
+      "judul": "Struktur kategori dan roadmap disusun",
+      "isi": "Daftar kategori yang sedang dipersiapkan beserta tahapan roadmap telah disusun dan disimpan dalam format data terpisah agar mudah diperbarui."
     },
     {
-      "id": "update-002",
-      "date": "2026-01-05",
-      "title": "Kategori Produk Direncanakan",
-      "description": "Sepuluh kategori produk beserta lima starter kit ditetapkan sebagai rencana pengembangan AppHub.ID.",
-      "status": "Direncanakan"
-    },
-    {
-      "id": "update-001",
-      "date": "2026-01-05",
-      "title": "Identitas dan Struktur Dasar AppHub.ID",
-      "description": "Nama, tagline, logo, serta struktur dasar website AppHub.ID ditetapkan sebagai fondasi pengembangan.",
-      "status": "Selesai"
+      "id": "u-001",
+      "tanggal": "2026-09-30",
+      "kategori": "Komunitas",
+      "judul": "Kanal komunikasi resmi disiapkan",
+      "isi": "Kanal komunikasi resmi AppHub.ID mulai disiapkan, meliputi email, WhatsApp, Discord, Facebook, dan GitHub. Kanal lain akan menyusul."
     }
   ]
 }
