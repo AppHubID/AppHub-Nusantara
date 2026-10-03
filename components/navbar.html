@@ -1,0 +1,89 @@
+<header class="navbar" id="navbar">
+  <div class="container navbar__inner">
+
+    <a class="navbar__brand" href="{{BASE}}index.html" aria-label="AppHub.ID — Beranda">
+      <img class="navbar__logo"
+           src="{{BASE}}assets/images/logo.png"
+           alt="Logo AppHub.ID"
+           width="36" height="36"
+           decoding="async">
+      <span class="navbar__brand-text">AppHub<span class="navbar__brand-dot">.ID</span></span>
+    </a>
+
+    <div class="navbar__actions">
+      <a class="btn btn--ghost btn--sm navbar__cta" href="{{BASE}}pages/about.html">Tentang</a>
+
+      <button class="navbar__toggle"
+              type="button"
+              id="navToggle"
+              aria-label="Buka menu"
+              aria-expanded="false"
+              aria-controls="navPanel">
+        <img class="navbar__toggle-icon navbar__toggle-icon--open"
+             src="{{BASE}}assets/icons/menu.svg"
+             alt="" width="20" height="20" aria-hidden="true">
+        <img class="navbar__toggle-icon navbar__toggle-icon--close"
+             src="{{BASE}}assets/icons/close.svg"
+             alt="" width="20" height="20" aria-hidden="true">
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<div class="nav-overlay" id="navOverlay" hidden aria-hidden="true"></div>
+
+<aside class="nav-panel"
+       id="navPanel"
+       aria-hidden="true"
+       aria-label="Menu navigasi utama">
+
+  <nav class="nav-panel__nav" aria-label="Navigasi halaman">
+    <p class="nav-panel__label">Navigasi</p>
+    <ul class="nav-panel__list">
+      <li>
+        <a class="nav-panel__link" data-nav="home" href="{{BASE}}index.html">
+          <span>Beranda</span>
+          <img class="icon icon--sm" src="{{BASE}}assets/icons/arrow-right.svg" alt="" width="16" height="16" aria-hidden="true">
+        </a>
+      </li>
+      <li>
+        <a class="nav-panel__link" data-nav="about" href="{{BASE}}pages/about.html">
+          <span>Tentang AppHub.ID</span>
+          <img class="icon icon--sm" src="{{BASE}}assets/icons/arrow-right.svg" alt="" width="16" height="16" aria-hidden="true">
+        </a>
+      </li>
+      <li>
+        <a class="nav-panel__link" data-nav="roadmap" href="{{BASE}}pages/roadmap.html">
+          <span>Roadmap</span>
+          <img class="icon icon--sm" src="{{BASE}}assets/icons/arrow-right.svg" alt="" width="16" height="16" aria-hidden="true">
+        </a>
+      </li>
+      <li>
+        <a class="nav-panel__link" data-nav="updates" href="{{BASE}}pages/updates.html">
+          <span>Pembaruan</span>
+          <img class="icon icon--sm" src="{{BASE}}assets/icons/arrow-right.svg" alt="" width="16" height="16" aria-hidden="true">
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="nav-panel__footer">
+    <p class="nav-panel__label">Kontak Resmi</p>
+    <div class="nav-panel__contact">
+      <a href="mailto:apphubid@gmail.com">
+        <img class="icon icon--sm" src="{{BASE}}assets/icons/gmail.svg" alt="" width="16" height="16" aria-hidden="true">
+        <span>apphubid@gmail.com</span>
+      </a>
+      <a href="https://wa.me/6288970200455" target="_blank" rel="noopener noreferrer">
+        <img class="icon icon--sm" src="{{BASE}}assets/icons/whatsapp.svg" alt="" width="16" height="16" aria-hidden="true">
+        <span>+62 889-7020-0455</span>
+      </a>
+      <a href="https://discord.gg/JDeCkT4Qj" target="_blank" rel="noopener noreferrer">
+        <img class="icon icon--sm" src="{{BASE}}assets/icons/discord.svg" alt="" width="16" height="16" aria-hidden="true">
+        <span>Discord AppHub.ID</span>
+      </a>
+    </div>
+  </div>
+
+</aside>
