@@ -1,35 +1,27 @@
-<div class="countdown" data-countdown aria-label="Hitung mundur menuju peluncuran AppHub.ID">
+<section class="countdown-section" aria-labelledby="countdownHeading">
+  <div class="container countdown-wrap">
+    <h2 id="countdownHeading" class="sr-only">Countdown peluncuran AppHub.ID</h2>
+    <p class="countdown-label" data-countdown-label>Peluncuran resmi dalam</p>
 
-  <div class="countdown__grid">
-
-    <div class="countdown__unit">
-      <span class="countdown__value" data-unit="days">00</span>
-      <span class="countdown__label">Hari</span>
+    <div class="countdown" data-countdown role="timer" aria-live="polite" aria-atomic="true">
+      <div class="countdown-item">
+        <span class="countdown-value" data-unit="days">00</span>
+        <span class="countdown-unit">Hari</span>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-value" data-unit="hours">00</span>
+        <span class="countdown-unit">Jam</span>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-value" data-unit="minutes">00</span>
+        <span class="countdown-unit">Menit</span>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-value" data-unit="seconds">00</span>
+        <span class="countdown-unit">Detik</span>
+      </div>
     </div>
 
-    <div class="countdown__unit">
-      <span class="countdown__value" data-unit="hours">00</span>
-      <span class="countdown__label">Jam</span>
-    </div>
-
-    <div class="countdown__unit">
-      <span class="countdown__value" data-unit="minutes">00</span>
-      <span class="countdown__label">Menit</span>
-    </div>
-
-    <div class="countdown__unit">
-      <span class="countdown__value" data-unit="seconds">00</span>
-      <span class="countdown__label">Detik</span>
-    </div>
-
+    <p class="countdown-note" data-countdown-note>30 Desember 2026 &middot; 00:00 WIB (Asia/Jakarta)</p>
   </div>
-
-  <p class="countdown__status" data-countdown-status hidden></p>
-
-  <noscript>
-    <p class="countdown__status">
-      Aktifkan JavaScript pada peramban Anda untuk melihat hitung mundur menuju 30 Desember 2026.
-    </p>
-  </noscript>
-
-</div>
+</section>
