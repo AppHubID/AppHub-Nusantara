@@ -26,7 +26,7 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="AppHub.ID — Segera Hadir">
-  <meta name="twitter:description" content="Platform digital untuk template, starter kit, dan aset digital. Segera hadir 30 Desember 2026.">
+  <meta name="twitter:description" content="Platform digital untuk template, starter kit, dan aset digital.">
   <meta name="twitter:image" content="https://apphubid.github.io/AppHub-Nusantara/assets/images/og-image.png">
 
   <link rel="stylesheet" href="assets/css/style.css">
@@ -57,7 +57,13 @@
           Coming Soon
         </p>
 
-        <h1 class="hero__title reveal" id="hero-title" style="--d:.1s">APPHUB.ID</h1>
+        <h1 class="hero__title reveal" id="hero-title">
+          APPHUB.ID
+          <img class="verified-badge verified-badge--hero"
+               src="assets/icons/verified-badge.svg"
+               alt="Terverifikasi"
+               width="30" height="30">
+        </h1>
 
         <p class="hero__lead reveal" style="--d:.15s">
           Satu tempat untuk template, starter kit, dan aset digital yang rapi dan siap pakai.
@@ -86,7 +92,7 @@
           </a>
           <a class="btn btn--ghost" href="subscription/index.html">
             <img class="icon" src="assets/icons/gift.svg" alt="" width="16" height="16" aria-hidden="true">
-            Lihat Paket Langganan
+            Paket Langganan
           </a>
         </div>
       </div>
@@ -112,26 +118,80 @@
         </div>
 
         <p class="disclaimer" data-product-note>
-          Seluruh kategori di atas merupakan rencana yang masih dalam tahap persiapan dan
-          dapat berubah sewaktu-waktu sebelum peluncuran resmi.
+          Seluruh kategori di atas merupakan rencana yang masih dalam tahap persiapan.
         </p>
       </div>
     </section>
 
-    <section class="section section--alt" id="roadmap-ringkas" aria-labelledby="roadmap-ringkas-title">
+    <section class="section section--alt" aria-labelledby="ekosistem-title">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Ekosistem</p>
+          <h2 class="section__title" id="ekosistem-title">Fitur ekosistem AppHub.ID</h2>
+          <p class="section__desc">
+            Selain kategori produk, kami sedang merancang sejumlah fitur ekosistem
+            yang akan menyatukan pengalaman pengguna AppHub.ID.
+          </p>
+        </header>
+
+        <div class="about-grid">
+          <a class="feature-link reveal" href="pages/marketplace.html">
+            <span class="feature-link__icon">
+              <img class="icon icon--lg" src="assets/icons/box.svg" alt="" width="22" height="22" aria-hidden="true">
+            </span>
+            <h3 class="feature-link__title">AppHub Marketplace</h3>
+            <p class="feature-link__text">Marketplace digital terkurasi untuk template dan aset.</p>
+            <span class="status-pill status-pill--soon">Coming Soon</span>
+          </a>
+
+          <a class="feature-link reveal" style="--d:.06s" href="pages/referral.html">
+            <span class="feature-link__icon">
+              <img class="icon icon--lg" src="assets/icons/star.svg" alt="" width="22" height="22" aria-hidden="true">
+            </span>
+            <h3 class="feature-link__title">Referral</h3>
+            <p class="feature-link__text">Ajak orang lain dan dapatkan reward dari aktivitas referral.</p>
+            <span class="status-pill status-pill--planned">Preview</span>
+          </a>
+
+          <a class="feature-link reveal" style="--d:.12s" href="pages/rewards.html">
+            <span class="feature-link__icon">
+              <img class="icon icon--lg" src="assets/icons/gift.svg" alt="" width="22" height="22" aria-hidden="true">
+            </span>
+            <h3 class="feature-link__title">Reward Center</h3>
+            <p class="feature-link__text">Tukarkan Points menjadi reward dan benefit eksklusif.</p>
+            <span class="status-pill status-pill--planned">Preview</span>
+          </a>
+
+          <a class="feature-link reveal" style="--d:.18s" href="pages/security.html">
+            <span class="feature-link__icon">
+              <img class="icon icon--lg" src="assets/icons/verified-badge.svg" alt="" width="22" height="22" aria-hidden="true">
+            </span>
+            <h3 class="feature-link__title">Security Center</h3>
+            <p class="feature-link__text">Konsep pusat keamanan akun AppHub.ID.</p>
+            <span class="status-pill status-pill--planned">Preview</span>
+          </a>
+        </div>
+
+        <div class="section__foot reveal">
+          <a class="btn btn--outline" href="pages/version.html">
+            Lihat Version System
+            <img class="icon" src="assets/icons/arrow-right.svg" alt="" width="16" height="16" aria-hidden="true">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="roadmap-ringkas-title">
       <div class="container">
         <header class="section__head reveal">
           <p class="eyebrow">Roadmap</p>
           <h2 class="section__title" id="roadmap-ringkas-title">Tahapan yang sedang kami lalui</h2>
           <p class="section__desc">
-            Kami membangun AppHub.ID secara bertahap. Berikut ringkasan tahapan besarnya —
-            detail lengkap tersedia di halaman roadmap.
+            Kami membangun AppHub.ID secara bertahap. Berikut ringkasan tahapan besarnya.
           </p>
         </header>
 
-        <div class="roadmap roadmap--preview"
-             data-roadmap
-             data-limit="3">
+        <div class="roadmap roadmap--preview" data-roadmap data-limit="3">
           <p class="state state--loading">Memuat roadmap…</p>
         </div>
 
@@ -144,13 +204,13 @@
       </div>
     </section>
 
-    <section class="section" id="pembaruan-ringkas" aria-labelledby="pembaruan-ringkas-title">
+    <section class="section section--alt" aria-labelledby="pembaruan-ringkas-title">
       <div class="container">
         <header class="section__head reveal">
           <p class="eyebrow">Pembaruan</p>
           <h2 class="section__title" id="pembaruan-ringkas-title">Catatan pengembangan terbaru</h2>
           <p class="section__desc">
-            Semua perubahan dan progres AppHub.ID kami catat secara terbuka di halaman pembaruan.
+            Semua perubahan dan progres AppHub.ID kami catat secara terbuka.
           </p>
         </header>
 
@@ -167,14 +227,14 @@
       </div>
     </section>
 
-    <section class="section section--alt" id="paket-ringkas" aria-labelledby="paket-ringkas-title">
+    <section class="section" aria-labelledby="paket-ringkas-title">
       <div class="container">
         <header class="section__head reveal">
           <p class="eyebrow">Paket Langganan</p>
           <h2 class="section__title" id="paket-ringkas-title">Pilihan paket yang sedang disiapkan</h2>
           <p class="section__desc">
-            AppHub.ID menyiapkan lima tingkatan paket — mulai dari yang gratis hingga
-            akses selamanya. Rincian lengkap tersedia di halaman paket langganan.
+            AppHub.ID menyiapkan lima tingkatan paket — mulai dari yang gratis
+            hingga akses selamanya.
           </p>
         </header>
 
@@ -191,15 +251,15 @@
       </div>
     </section>
 
-    <section class="section" id="kontak" aria-labelledby="kontak-title">
+    <section class="section section--alt" id="kontak" aria-labelledby="kontak-title">
       <div class="container">
         <div class="contact-card reveal">
           <div class="contact-card__body">
             <p class="eyebrow">Tetap Terhubung</p>
             <h2 class="contact-card__title" id="kontak-title">Punya pertanyaan atau ingin bekerja sama?</h2>
             <p class="contact-card__desc">
-              Kami terbuka untuk diskusi, masukan, maupun kolaborasi. Kirim pesan langsung
-              melalui email atau WhatsApp resmi AppHub.ID.
+              Kami terbuka untuk diskusi, masukan, maupun kolaborasi. Kirim pesan
+              langsung melalui email atau WhatsApp resmi AppHub.ID.
             </p>
           </div>
 
@@ -208,9 +268,7 @@
               <img class="icon" src="assets/icons/gmail.svg" alt="" width="16" height="16" aria-hidden="true">
               apphubid@gmail.com
             </a>
-            <a class="btn btn--ghost"
-               href="https://wa.me/6288970200455"
-               target="_blank" rel="noopener noreferrer">
+            <a class="btn btn--ghost" href="https://wa.me/6288970200455" target="_blank" rel="noopener noreferrer">
               <img class="icon" src="assets/icons/whatsapp.svg" alt="" width="16" height="16" aria-hidden="true">
               WhatsApp
             </a>
@@ -228,4 +286,4 @@
   <script src="assets/js/roadmap.js" defer></script>
   <script src="assets/js/notifications.js" defer></script>
 </body>
-            </html>
+              </html>
