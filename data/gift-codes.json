@@ -1,0 +1,19 @@
+{
+  "meta": { "status": "Preview", "catatan": "Fitur keamanan akan tersedia setelah sistem akun AppHub.ID diluncurkan." },
+  "fitur": [
+    { "icon": "assets/icons/verified-badge.svg", "title": "Account Security", "text": "Ringkasan status keamanan akun Anda dalam satu tampilan." },
+    { "icon": "assets/icons/clock.svg", "title": "Login Activity", "text": "Riwayat aktivitas login termasuk perangkat, lokasi, dan waktu." },
+    { "icon": "assets/icons/box.svg", "title": "Active Sessions", "text": "Daftar sesi aktif beserta opsi mengakhirinya dari jarak jauh." },
+    { "icon": "assets/icons/crown.svg", "title": "Password Security", "text": "Rekomendasi kekuatan kata sandi dan pengingat pembaruan." },
+    { "icon": "assets/icons/star.svg", "title": "Two-Factor Authentication", "text": "Lapisan keamanan tambahan berupa kode verifikasi saat masuk." },
+    { "icon": "assets/icons/bell.svg", "title": "Security Alerts", "text": "Notifikasi otomatis saat terdeteksi aktivitas tidak biasa." },
+    { "icon": "assets/icons/github.svg", "title": "Device Management", "text": "Pengelolaan perangkat yang pernah terhubung ke akun Anda." },
+    { "icon": "assets/icons/infinity.svg", "title": "Privacy & Security Information", "text": "Pusat informasi mengenai kebijakan privasi dan keamanan." }
+  ],
+  "stats": [
+    { "label": "Status Akun", "value": "Aman", "icon": "assets/icons/verified-badge.svg", "hint": "Contoh tampilan" },
+    { "label": "Sesi Aktif", "value": "2", "icon": "assets/icons/box.svg", "hint": "Contoh tampilan" },
+    { "label": "Peringatan Keamanan", "value": "0", "icon": "assets/icons/bell.svg", "hint": "Contoh tampilan" },
+    { "label": "2FA", "value": "Belum Aktif", "icon": "assets/icons/star.svg", "hint": "Contoh tampilan" }
+  ]
+}
