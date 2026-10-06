@@ -2,36 +2,43 @@
   "meta": {
     "brand": "AppHub.ID",
     "catatan": "Seluruh entri berikut merupakan catatan pengembangan internal AppHub.ID dan bukan klaim aktivitas pihak ketiga.",
-    "diperbarui": "2026-01-01"
+    "diperbarui": "2026-10-06"
   },
   "updates": [
     {
+      "id": "u-005",
+      "tanggal": "2026-10-06",
+      "kategori": "Komunitas",
+      "judul": "Kanal komunikasi resmi disiapkan",
+      "isi": "Kanal komunikasi resmi AppHub.ID mulai disiapkan, meliputi email, WhatsApp, Discord, Facebook, dan GitHub. Kanal lain akan menyusul."
+    },
+    {
       "id": "u-004",
+      "tanggal": "2026-10-05",
+      "kategori": "Ekosistem",
+      "judul": "Halaman ekosistem preview ditambahkan",
+      "isi": "Halaman konsep Marketplace, Referral, Security Center, Gift Code, Coupon, Reward Center, Points, Version, Verify, dan Changelog ditambahkan sebagai preview."
+    },
+    {
+      "id": "u-003",
       "tanggal": "2026-10-04",
       "kategori": "Paket",
       "judul": "Halaman paket langganan mulai dipublikasikan",
       "isi": "Halaman paket langganan AppHub.ID mulai ditampilkan sebagai informasi awal. Rincian paket, harga, dan benefit masih dapat berubah sebelum peluncuran resmi."
     },
     {
-      "id": "u-003",
+      "id": "u-002",
       "tanggal": "2026-10-03",
       "kategori": "Website",
       "judul": "Halaman Coming Soon AppHub.ID aktif",
       "isi": "Halaman resmi Coming Soon AppHub.ID telah dipublikasikan. Halaman ini menampilkan tanggal peluncuran, hitung mundur, ringkasan kategori, serta pratinjau roadmap dan pembaruan."
     },
     {
-      "id": "u-002",
+      "id": "u-001",
       "tanggal": "2026-10-01",
       "kategori": "Perencanaan",
       "judul": "Struktur kategori dan roadmap disusun",
       "isi": "Daftar kategori yang sedang dipersiapkan beserta tahapan roadmap telah disusun dan disimpan dalam format data terpisah agar mudah diperbarui."
-    },
-    {
-      "id": "u-001",
-      "tanggal": "2026-09-30",
-      "kategori": "Komunitas",
-      "judul": "Kanal komunikasi resmi disiapkan",
-      "isi": "Kanal komunikasi resmi AppHub.ID mulai disiapkan, meliputi email, WhatsApp, Discord, Facebook, dan GitHub. Kanal lain akan menyusul."
     }
   ]
 }
