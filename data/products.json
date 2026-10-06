@@ -6,110 +6,20 @@
     "diperbarui": "2026-01-01"
   },
   "categories": [
-    {
-      "id": "ai-prompt",
-      "nama": "AI Prompt",
-      "deskripsi": "Kumpulan kerangka prompt siap pakai untuk membantu pekerjaan kreatif, penulisan, dan produktivitas harian.",
-      "grup": "Utama",
-      "status": "Direncanakan"
-    },
-    {
-      "id": "website-templates",
-      "nama": "Website Templates",
-      "deskripsi": "Template halaman web yang rapi dan responsif sebagai titik awal pembuatan situs pribadi maupun bisnis.",
-      "grup": "Utama",
-      "status": "Sedang Dipersiapkan"
-    },
-    {
-      "id": "discord-telegram-templates",
-      "nama": "Discord/Telegram Templates",
-      "deskripsi": "Struktur server, channel, dan pengaturan komunitas untuk Discord dan Telegram yang siap disesuaikan.",
-      "grup": "Utama",
-      "status": "Direncanakan"
-    },
-    {
-      "id": "editing-packs",
-      "nama": "Editing Packs",
-      "deskripsi": "Paket aset pendukung editing seperti preset, elemen grafis, dan panduan penggunaannya.",
-      "grup": "Utama",
-      "status": "Direncanakan"
-    },
-    {
-      "id": "gaming",
-      "nama": "Gaming",
-      "deskripsi": "Aset dan template bertema gaming untuk kebutuhan komunitas, overlay, maupun konten.",
-      "grup": "Utama",
-      "status": "Direncanakan"
-    },
-    {
-      "id": "html",
-      "nama": "HTML",
-      "deskripsi": "Potongan kode dan halaman HTML dasar yang bersih, semantik, dan mudah dimodifikasi.",
-      "grup": "Utama",
-      "status": "Sedang Dipersiapkan"
-    },
-    {
-      "id": "admin-productivity",
-      "nama": "Admin/Productivity",
-      "deskripsi": "Template dan alat bantu untuk pengelolaan administrasi, pencatatan, dan alur kerja harian.",
-      "grup": "Utama",
-      "status": "Direncanakan"
-    },
-    {
-      "id": "umkm",
-      "nama": "UMKM",
-      "deskripsi": "Perangkat digital praktis untuk pelaku usaha kecil, mulai dari katalog hingga materi promosi.",
-      "grup": "Utama",
-      "status": "Direncanakan"
-    },
-    {
-      "id": "social-media",
-      "nama": "Social Media",
-      "deskripsi": "Template konten dan tata letak unggahan untuk menjaga konsistensi visual di media sosial.",
-      "grup": "Utama",
-      "status": "Direncanakan"
-    },
-    {
-      "id": "digital-services",
-      "nama": "Digital Services",
-      "deskripsi": "Kerangka penawaran dan materi pendukung untuk berbagai jenis layanan digital.",
-      "grup": "Utama",
-      "status": "Direncanakan"
-    },
-    {
-      "id": "content-creator-starter-kit",
-      "nama": "Content Creator Starter Kit",
-      "deskripsi": "Paket awal untuk kreator konten: perencanaan, template, dan aset dasar produksi.",
-      "grup": "Starter Kits",
-      "status": "Segera Hadir"
-    },
-    {
-      "id": "mahasiswa-starter-kit",
-      "nama": "Mahasiswa Starter Kit",
-      "deskripsi": "Kumpulan template dan alat bantu untuk kebutuhan perkuliahan, tugas, dan presentasi.",
-      "grup": "Starter Kits",
-      "status": "Segera Hadir"
-    },
-    {
-      "id": "job-seeker-starter-kit",
-      "nama": "Job Seeker Starter Kit",
-      "deskripsi": "Panduan dan template untuk menyiapkan lamaran kerja secara lebih terstruktur.",
-      "grup": "Starter Kits",
-      "status": "Segera Hadir"
-    },
-    {
-      "id": "umkm-starter-kit",
-      "nama": "UMKM Starter Kit",
-      "deskripsi": "Paket awal bagi pelaku usaha kecil untuk membangun identitas dan materi promosi digital.",
-      "grup": "Starter Kits",
-      "status": "Segera Hadir"
-    },
-    {
-      "id": "beginner-designer-kit",
-      "nama": "Beginner Designer Kit",
-      "deskripsi": "Paket pengenalan desain berisi dasar-dasar tata letak, warna, dan tipografi.",
-      "grup": "Starter Kits",
-      "status": "Segera Hadir"
-    }
+    { "id": "ai-prompt", "nama": "AI Prompt", "deskripsi": "Kumpulan kerangka prompt siap pakai untuk pekerjaan kreatif, penulisan, dan produktivitas harian.", "grup": "Utama", "status": "Direncanakan" },
+    { "id": "website-templates", "nama": "Website Templates", "deskripsi": "Template halaman web yang rapi dan responsif sebagai titik awal pembuatan situs pribadi maupun bisnis.", "grup": "Utama", "status": "Sedang Dipersiapkan" },
+    { "id": "discord-telegram-templates", "nama": "Discord/Telegram Templates", "deskripsi": "Struktur server, channel, dan pengaturan komunitas untuk Discord dan Telegram yang siap disesuaikan.", "grup": "Utama", "status": "Direncanakan" },
+    { "id": "editing-packs", "nama": "Editing Packs", "deskripsi": "Paket aset pendukung editing seperti preset, elemen grafis, dan panduan penggunaannya.", "grup": "Utama", "status": "Direncanakan" },
+    { "id": "gaming", "nama": "Gaming", "deskripsi": "Aset dan template bertema gaming untuk kebutuhan komunitas, overlay, maupun konten.", "grup": "Utama", "status": "Direncanakan" },
+    { "id": "html", "nama": "HTML", "deskripsi": "Potongan kode dan halaman HTML dasar yang bersih, semantik, dan mudah dimodifikasi.", "grup": "Utama", "status": "Sedang Dipersiapkan" },
+    { "id": "admin-productivity", "nama": "Admin/Productivity", "deskripsi": "Template dan alat bantu untuk pengelolaan administrasi, pencatatan, dan alur kerja harian.", "grup": "Utama", "status": "Direncanakan" },
+    { "id": "umkm", "nama": "UMKM", "deskripsi": "Perangkat digital praktis untuk pelaku usaha kecil, mulai dari katalog hingga materi promosi.", "grup": "Utama", "status": "Direncanakan" },
+    { "id": "social-media", "nama": "Social Media", "deskripsi": "Template konten dan tata letak unggahan untuk menjaga konsistensi visual di media sosial.", "grup": "Utama", "status": "Direncanakan" },
+    { "id": "digital-services", "nama": "Digital Services", "deskripsi": "Kerangka penawaran dan materi pendukung untuk berbagai jenis layanan digital.", "grup": "Utama", "status": "Direncanakan" },
+    { "id": "content-creator-starter-kit", "nama": "Content Creator Starter Kit", "deskripsi": "Paket awal untuk kreator konten: perencanaan, template, dan aset dasar produksi.", "grup": "Starter Kits", "status": "Segera Hadir" },
+    { "id": "mahasiswa-starter-kit", "nama": "Mahasiswa Starter Kit", "deskripsi": "Kumpulan template dan alat bantu untuk kebutuhan perkuliahan, tugas, dan presentasi.", "grup": "Starter Kits", "status": "Segera Hadir" },
+    { "id": "job-seeker-starter-kit", "nama": "Job Seeker Starter Kit", "deskripsi": "Panduan dan template untuk menyiapkan lamaran kerja secara lebih terstruktur.", "grup": "Starter Kits", "status": "Segera Hadir" },
+    { "id": "umkm-starter-kit", "nama": "UMKM Starter Kit", "deskripsi": "Paket awal bagi pelaku usaha kecil untuk membangun identitas dan materi promosi digital.", "grup": "Starter Kits", "status": "Segera Hadir" },
+    { "id": "beginner-designer-kit", "nama": "Beginner Designer Kit", "deskripsi": "Paket pengenalan desain berisi dasar-dasar tata letak, warna, dan tipografi.", "grup": "Starter Kits", "status": "Segera Hadir" }
   ]
 }
