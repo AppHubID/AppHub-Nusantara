@@ -5,15 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="base-path" content="../">
   <meta name="theme-color" content="#07070c">
-
   <title>Version System — AppHub.ID</title>
-  <meta name="description" content="Informasi versi website dan sistem AppHub.ID. Rilis, status, dan catatan versi terbaru.">
+  <meta name="description" content="Informasi versi website dan sistem AppHub.ID.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://apphubid.github.io/AppHub-Nusantara/pages/version.html">
-
   <link rel="icon" type="image/png" href="../assets/images/favicon.png">
   <link rel="apple-touch-icon" href="../assets/images/favicon.png">
-
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="AppHub.ID">
   <meta property="og:title" content="Version System — AppHub.ID">
@@ -21,12 +18,10 @@
   <meta property="og:url" content="https://apphubid.github.io/AppHub-Nusantara/pages/version.html">
   <meta property="og:image" content="https://apphubid.github.io/AppHub-Nusantara/assets/images/og-image.png">
   <meta property="og:locale" content="id_ID">
-
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Version System — AppHub.ID">
   <meta name="twitter:description" content="Informasi versi website dan sistem AppHub.ID.">
   <meta name="twitter:image" content="https://apphubid.github.io/AppHub-Nusantara/assets/images/og-image.png">
-
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/responsive.css">
   <link rel="stylesheet" href="../assets/css/animations.css">
@@ -34,11 +29,9 @@
 
 <body data-page="version">
   <a class="skip-link" href="#main">Lewati ke konten utama</a>
-
   <div data-component="navbar"></div>
 
   <main id="main">
-
     <header class="page-header">
       <div class="page-header__glow" aria-hidden="true"></div>
       <div class="container page-header__inner">
@@ -47,160 +40,52 @@
           <img class="icon" src="../assets/icons/arrow-right.svg" alt="" width="14" height="14" aria-hidden="true">
           <span aria-current="page">Version</span>
         </nav>
-
         <div class="page-header__badge reveal">
-          <span class="status-pill status-pill--active">
-            <img class="icon icon--sm" src="../assets/icons/check.svg" alt="" width="14" height="14" aria-hidden="true">
-            Stable
-          </span>
+          <span class="status-pill status-pill--active">Stable</span>
           <span class="status-pill status-pill--planned">Informasi</span>
         </div>
-
-        <h1 class="page-header__title reveal">Version System</h1>
-        <p class="page-header__desc reveal">
+        <h1 class="page-header__title">Version System</h1>
+        <p class="page-header__desc">
           Halaman informasi versi resmi website dan sistem AppHub.ID. Diperbarui
           setiap kali ada rilis baru.
         </p>
       </div>
     </header>
 
-    <!-- CURRENT VERSION -->
     <section class="section" aria-labelledby="vr-current-title">
       <div class="container">
-        <div class="version-card reveal">
-          <div class="version-card__head">
-            <span class="version-card__icon">
-              <img class="icon icon--lg" src="../assets/icons/verified-badge.svg" alt="" width="24" height="24" aria-hidden="true">
-            </span>
-            <div class="version-card__brand">
-              <span class="version-card__brand-name">
-                AppHub.ID
-                <img class="verified-inline__badge" src="../assets/icons/verified-badge.svg" alt="Verified" width="20" height="20">
-              </span>
-              <span class="version-card__brand-tag">Coming Soon Platform</span>
-            </div>
-            <span class="version-card__status">Stable</span>
-          </div>
-
-          <div class="version-card__grid">
-            <div class="version-card__item">
-              <span class="version-card__label">Version</span>
-              <span class="version-card__value">1.0.0</span>
-            </div>
-            <div class="version-card__item">
-              <span class="version-card__label">Status</span>
-              <span class="version-card__value">Stable</span>
-            </div>
-            <div class="version-card__item">
-              <span class="version-card__label">Release</span>
-              <span class="version-card__value">Initial Version</span>
-            </div>
-            <div class="version-card__item">
-              <span class="version-card__label">Channel</span>
-              <span class="version-card__value">Production</span>
-            </div>
-          </div>
+        <h2 class="visually-hidden" id="vr-current-title">Versi saat ini</h2>
+        <div class="version-card reveal" data-version-current>
+          <p class="state state--loading">Memuat versi…</p>
         </div>
-
         <div class="disclaimer reveal">
-          Versi <strong style="color:var(--text);">1.0.0</strong> merupakan versi awal
-          website Coming Soon AppHub.ID. Informasi versi akan diperbarui setiap kali
-          ada pembaruan rilis resmi.
+          Informasi versi akan diperbarui setiap kali ada pembaruan rilis resmi.
         </div>
       </div>
     </section>
 
-    <!-- VERSION INFO -->
     <section class="section section--alt" aria-labelledby="vr-info-title">
       <div class="container">
         <header class="section__head reveal">
           <p class="eyebrow">Informasi Versi</p>
-          <h2 class="section__title" id="vr-info-title">Ringkasan rilis 1.0.0</h2>
-          <p class="section__desc">
-            Apa saja yang termasuk dalam rilis awal website AppHub.ID.
-          </p>
+          <h2 class="section__title" id="vr-info-title">Ringkasan rilis</h2>
         </header>
-
-        <div class="prose reveal">
-          <div class="info-row">
-            <div class="info-row__key">Nomor Versi</div>
-            <div class="info-row__value">1.0.0</div>
-          </div>
-          <div class="info-row">
-            <div class="info-row__key">Nama Rilis</div>
-            <div class="info-row__value">Initial Version</div>
-          </div>
-          <div class="info-row">
-            <div class="info-row__key">Status</div>
-            <div class="info-row__value">
-              <span class="status-pill status-pill--success">Stable</span>
-            </div>
-          </div>
-          <div class="info-row">
-            <div class="info-row__key">Channel</div>
-            <div class="info-row__value">Production</div>
-          </div>
-          <div class="info-row">
-            <div class="info-row__key">Platform</div>
-            <div class="info-row__value">Static Web (GitHub Pages)</div>
-          </div>
-          <div class="info-row">
-            <div class="info-row__key">Tanggal Rilis</div>
-            <div class="info-row__value">Rilis awal website Coming Soon</div>
-          </div>
+        <div class="prose reveal" data-version-info>
+          <p class="state state--loading">Memuat informasi versi…</p>
         </div>
-
-        <div class="feature-tags reveal" style="justify-content:center; margin-top:32px;">
-          <span class="feature-tag">HTML5</span>
-          <span class="feature-tag">CSS3</span>
-          <span class="feature-tag">JavaScript</span>
-          <span class="feature-tag">Responsive</span>
-          <span class="feature-tag">Accessibility</span>
-          <span class="feature-tag">SEO</span>
-          <span class="feature-tag">Local Fonts</span>
-          <span class="feature-tag">Local Icons</span>
-        </div>
+        <div class="feature-tags reveal" style="justify-content:center; margin-top:32px;" data-version-tags></div>
       </div>
     </section>
 
-    <!-- ROADMAP VERSI -->
     <section class="section" aria-labelledby="vr-plan-title">
       <div class="container">
         <header class="section__head reveal">
           <p class="eyebrow">Rencana Versi</p>
           <h2 class="section__title" id="vr-plan-title">Arah pengembangan versi berikutnya</h2>
-          <p class="section__desc">
-            Gambaran umum arah pengembangan versi berikutnya. Belum menjadi
-            jadwal resmi.
-          </p>
         </header>
-
-        <div class="about-grid">
-          <article class="about-card reveal">
-            <h3 class="about-card__title">1.x — Penyempurnaan</h3>
-            <p class="about-card__text">
-              Perbaikan kecil, penyempurnaan UI, dan penambahan halaman
-              informasi yang lebih lengkap.
-            </p>
-          </article>
-
-          <article class="about-card reveal" style="--d:.06s">
-            <h3 class="about-card__title">2.x — Ekosistem</h3>
-            <p class="about-card__text">
-              Menyertakan fitur ekosistem seperti Marketplace, Referral, dan
-              Reward Center setelah sistem akun siap.
-            </p>
-          </article>
-
-          <article class="about-card reveal" style="--d:.12s">
-            <h3 class="about-card__title">3.x — Peluncuran Resmi</h3>
-            <p class="about-card__text">
-              Peluncuran resmi AppHub.ID dengan seluruh fitur utama aktif
-              dan dapat diakses publik.
-            </p>
-          </article>
+        <div class="about-grid" data-version-previous>
+          <p class="state state--loading">Memuat rencana…</p>
         </div>
-
         <div class="section__foot reveal">
           <a class="btn btn--outline" href="changelog.html">
             Lihat Changelog
@@ -209,7 +94,6 @@
         </div>
       </div>
     </section>
-
   </main>
 
   <div data-component="footer"></div>
@@ -218,5 +102,6 @@
   <script src="../assets/js/countdown.js" defer></script>
   <script src="../assets/js/roadmap.js" defer></script>
   <script src="../assets/js/notifications.js" defer></script>
+  <script src="../assets/js/version.js" defer></script>
 </body>
 </html>
