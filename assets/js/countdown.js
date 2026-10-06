@@ -1,7 +1,5 @@
 /* ==========================================================================
    AppHub.ID — countdown.js
-   Hitung mundur real-time menuju peluncuran AppHub.ID.
-   Target: 30 Desember 2026, 00:00 WIB (Asia/Jakarta, UTC+7).
    ========================================================================== */
 
 (function () {
@@ -9,17 +7,14 @@
 
   var LAUNCH_ISO = '2026-12-30T00:00:00+07:00';
   var LAUNCH_TIME = new Date(LAUNCH_ISO).getTime();
-  var LAUNCH_LABEL = '30 Desember 2026, 00:00 WIB';
-
   var timers = [];
 
-  function pad(value, length) {
-    var str = String(Math.max(0, value));
-    while (str.length < length) str = '0' + str;
-    return str;
+  function pad(v, len) {
+    var s = String(Math.max(0, v));
+    while (s.length < len) s = '0' + s;
+    return s;
   }
-
-  function formatNumber(value) { return pad(value, 2); }
+  function fmt(v) { return pad(v, 2); }
 
   function stopAll() {
     timers.forEach(function (id) { window.clearInterval(id); });
@@ -37,91 +32,68 @@
     var gridEl = root.querySelector('.countdown__grid');
 
     if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
-
     root.setAttribute('data-countdown-ready', 'true');
 
-    var previous = { days: null, hours: null, minutes: null, seconds: null };
+    var prev = { days: null, hours: null, minutes: null, seconds: null };
 
-    function setValue(el, value, key) {
-      var text = formatNumber(value);
+    function setVal(el, value, key) {
+      var text = fmt(value);
       if (el.textContent === text) return;
-
       el.textContent = text;
-
-      if (previous[key] !== null) {
+      if (prev[key] !== null) {
         el.classList.remove('is-ticking');
         void el.offsetWidth;
         el.classList.add('is-ticking');
       }
-
-      previous[key] = value;
+      prev[key] = value;
     }
 
-    function markComplete() {
+    function complete() {
       if (gridEl) gridEl.hidden = true;
-
       if (statusEl) {
         statusEl.hidden = false;
         statusEl.textContent = 'Waktu peluncuran telah tiba. Selamat datang di AppHub.ID.';
       }
-
       root.classList.add('is-complete');
       stopAll();
     }
 
     function render() {
-      var now = Date.now();
-      var diff = LAUNCH_TIME - now;
-
-      if (!isFinite(diff) || diff <= 0) { markComplete(); return; }
-
-      var totalSeconds = Math.floor(diff / 1000);
-
-      var days = Math.floor(totalSeconds / 86400);
-      var hours = Math.floor((totalSeconds % 86400) / 3600);
-      var minutes = Math.floor((totalSeconds % 3600) / 60);
-      var seconds = totalSeconds % 60;
-
-      setValue(daysEl, days, 'days');
-      setValue(hoursEl, hours, 'hours');
-      setValue(minutesEl, minutes, 'minutes');
-      setValue(secondsEl, seconds, 'seconds');
+      var diff = LAUNCH_TIME - Date.now();
+      if (!isFinite(diff) || diff <= 0) { complete(); return; }
+      var t = Math.floor(diff / 1000);
+      setVal(daysEl, Math.floor(t / 86400), 'days');
+      setVal(hoursEl, Math.floor((t % 86400) / 3600), 'hours');
+      setVal(minutesEl, Math.floor((t % 3600) / 60), 'minutes');
+      setVal(secondsEl, t % 60, 'seconds');
     }
 
     var initialDiff = LAUNCH_TIME - Date.now();
+    if (!isFinite(initialDiff) || initialDiff <= 0) { complete(); return; }
 
-    if (!isFinite(initialDiff) || initialDiff <= 0) { markComplete(); return; }
+    var initial = Math.floor(initialDiff / 1000);
+    daysEl.textContent = fmt(Math.floor(initial / 86400));
+    hoursEl.textContent = fmt(Math.floor((initial % 86400) / 3600));
+    minutesEl.textContent = fmt(Math.floor((initial % 3600) / 60));
+    secondsEl.textContent = fmt(initial % 60);
+    prev.days = Math.floor(initial / 86400);
+    prev.hours = Math.floor((initial % 86400) / 3600);
+    prev.minutes = Math.floor((initial % 3600) / 60);
+    prev.seconds = initial % 60;
 
-    var initialSeconds = Math.floor(initialDiff / 1000);
-    daysEl.textContent = formatNumber(Math.floor(initialSeconds / 86400));
-    hoursEl.textContent = formatNumber(Math.floor((initialSeconds % 86400) / 3600));
-    minutesEl.textContent = formatNumber(Math.floor((initialSeconds % 3600) / 60));
-    secondsEl.textContent = formatNumber(initialSeconds % 60);
-
-    previous.days = Math.floor(initialSeconds / 86400);
-    previous.hours = Math.floor((initialSeconds % 86400) / 3600);
-    previous.minutes = Math.floor((initialSeconds % 3600) / 60);
-    previous.seconds = initialSeconds % 60;
-
-    var intervalId = window.setInterval(render, 1000);
-    timers.push(intervalId);
-
+    timers.push(window.setInterval(render, 1000));
     document.addEventListener('visibilitychange', function () {
       if (!document.hidden) render();
     });
   }
 
   function initAll() {
-    var roots = document.querySelectorAll('[data-countdown]');
-    Array.prototype.forEach.call(roots, initCountdown);
+    Array.prototype.forEach.call(document.querySelectorAll('[data-countdown]'), initCountdown);
   }
 
   function boot() {
     var ready = window.AppHub && window.AppHub.ready ? window.AppHub.ready : Promise.resolve();
-    ready.then(function () {
-      initAll();
-      console.info('[AppHub] Countdown aktif. Target: ' + LAUNCH_LABEL);
-    });
+    ready.then(initAll);
   }
 
   window.addEventListener('pagehide', stopAll);
