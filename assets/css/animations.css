@@ -1,0 +1,90 @@
+/* =========================================================
+   AppHub.ID — animations.css
+   ========================================================= */
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+@keyframes pulseSoft {
+  0%, 100% { opacity: .55; }
+  50% { opacity: 1; }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes tickUp {
+  from { opacity: .35; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .7s var(--ease-out), transform .7s var(--ease-out);
+  transition-delay: var(--d, 0s);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  will-change: auto;
+}
+
+.js-reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: fadeUp .6s var(--ease-out) forwards;
+  animation-delay: var(--d, 0s);
+}
+
+.countdown__value { transition: color .3s var(--ease); }
+.countdown__value.is-ticking { animation: tickUp .4s var(--ease-out); }
+
+.quote-card__text { transition: opacity .3s var(--ease); }
+.quote-card.is-transitioning .quote-card__text { opacity: 0; }
+
+.tool-card, .feature-card, .mini-card, .status-card {
+  transition: transform .35s var(--ease),
+              border-color .35s var(--ease),
+              background-color .35s var(--ease),
+              box-shadow .35s var(--ease);
+}
+.tool-card:hover, .feature-card:hover, .mini-card:hover, .status-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.btn:focus-visible,
+.navbar__toggle:focus-visible,
+.footer__social-link:focus-visible,
+.nav-panel__link:focus-visible {
+  outline: 2px solid var(--brand); outline-offset: 3px;
+}
+
+body.is-loaded .hero__logo { animation: scaleIn .7s var(--ease-out) both; }
+body.is-loaded .hero__title { animation: fadeUp .8s var(--ease-out) .05s both; }
+body.is-loaded .hero__lead { animation: fadeUp .8s var(--ease-out) .12s both; }
+body.is-loaded .hero__actions { animation: fadeUp .8s var(--ease-out) .18s both; }
+body.is-loaded .hero__version { animation: fadeUp .8s var(--ease-out) .24s both; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal, .js-reveal { opacity: 1 !important; transform: none !important; }
+  body.is-loaded .hero__logo,
+  body.is-loaded .hero__title,
+  body.is-loaded .hero__lead,
+  body.is-loaded .hero__actions,
+  body.is-loaded .hero__version { animation: none !important; }
+  .state--loading { animation: none !important; opacity: 1 !important; }
+}

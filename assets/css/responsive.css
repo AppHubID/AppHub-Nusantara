@@ -1,0 +1,116 @@
+/* =========================================================
+   AppHub.ID — responsive.css
+   ========================================================= */
+
+@media (min-width: 1440px) {
+  :root { --container: 1220px; --gutter: 32px; }
+  .hero { padding-top: calc(var(--nav-h) + 110px); }
+}
+
+@media (max-width: 1100px) {
+  .footer__top { grid-template-columns: 1.4fr 1fr 1fr; gap: 34px; }
+  .footer__col--social { grid-column: 1 / -1; }
+  .cta { padding: 40px 32px; }
+  .calc-grid { grid-template-columns: 1fr; gap: 20px; }
+  .calc-summary { position: static; }
+  .two-col { grid-template-columns: 1fr; gap: 32px; }
+  .two-col__side { max-width: none; }
+}
+
+@media (max-width: 900px) {
+  :root { --gutter: 22px; --nav-h: 66px; }
+  .section { padding: 76px 0; }
+  .hero { padding: calc(var(--nav-h) + 68px) 0 80px; }
+  .hero__logo { width: 76px; height: 76px; margin-bottom: 20px; }
+  .hero__actions { margin-top: 8px; }
+  .countdown__grid { gap: 10px; }
+  .countdown__unit { padding: 22px 8px 17px; border-radius: var(--r-md); }
+  .countdown__label { font-size: .66rem; letter-spacing: .12em; }
+  .footer { padding-top: 56px; }
+  .footer__top { grid-template-columns: 1fr 1fr; gap: 32px; padding-bottom: 40px; }
+  .footer__col--brand { grid-column: 1 / -1; }
+  .page-header { padding: calc(var(--nav-h) + 60px) 0 48px; }
+  .info-row { grid-template-columns: 1fr; gap: 6px; }
+  .nav-panel { width: 100%; padding: calc(var(--nav-h) + 18px) 22px 30px; border-left: 0; }
+  .notice { padding: 24px 22px; grid-template-columns: 1fr; }
+  .notice__icon { width: 48px; height: 48px; }
+  .cta { grid-template-columns: 1fr; padding: 32px 26px; }
+  .cta__actions { justify-content: flex-start; }
+  .mini-grid { grid-template-columns: 1fr 1fr; }
+  .quote-card { padding: 36px 30px; }
+  .survey-progress { top: 0; }
+}
+
+@media (max-width: 720px) {
+  .hero__title { max-width: none; font-size: clamp(1.7rem, 1.2rem + 3.5vw, 2.6rem); }
+  .hero__lead { font-size: .98rem; }
+  .hero__actions { flex-direction: column; align-items: stretch; width: 100%; max-width: 340px; }
+  .hero__actions .btn { width: 100%; }
+  .feature-grid { grid-template-columns: 1fr; }
+  .tool-grid { grid-template-columns: 1fr; }
+  .mini-grid { grid-template-columns: 1fr; }
+  .section__head { margin-bottom: 38px; }
+  .section__foot { margin-top: 32px; }
+  .section__foot .btn { width: 100%; max-width: 320px; }
+  .footer__top { grid-template-columns: 1fr; gap: 30px; }
+  .footer__bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .footer__legal { gap: 8px 16px; }
+  .two-col__actions { flex-direction: column; align-items: stretch; width: 100%; max-width: 320px; }
+  .two-col__actions .btn { width: 100%; }
+  .notice__actions { flex-direction: column; align-items: stretch; }
+  .notice__actions .btn { width: 100%; }
+  .calc-panel { padding: 24px 20px; }
+  .calc-summary { padding: 24px 20px; }
+  .calc-actions { flex-direction: column; }
+  .calc-actions .btn { width: 100%; }
+  .question { padding: 20px 18px; }
+  .question__scale { gap: 6px; }
+  .question__scale-item { min-width: 42px; }
+  .question__scale-item label { height: 42px; font-size: .88rem; }
+  .survey-actions { justify-content: stretch; }
+  .survey-actions .btn { width: 100%; }
+  .status-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 520px) {
+  :root { --gutter: 18px; --nav-h: 62px; }
+  body { font-size: 15.5px; }
+  .section { padding: 62px 0; }
+  .hero { padding: calc(var(--nav-h) + 52px) 0 68px; }
+  .hero__logo { width: 68px; height: 68px; }
+  .hero__title { font-size: clamp(1.55rem, 1.2rem + 4vw, 2.2rem); }
+  .badge { font-size: .68rem; padding: 7px 14px; letter-spacing: .12em; }
+  .countdown__grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .countdown__value { font-size: 1.85rem; }
+  .countdown__unit { padding: 20px 8px 15px; }
+  .contact-card, .cta { padding: 26px 20px; border-radius: var(--r-lg); }
+  .btn { --btn-py: 12px; --btn-px: 20px; font-size: .9rem; }
+  .quote-card { padding: 28px 22px; min-height: 200px; }
+  .quote-card__text { font-size: 1.05rem; }
+  .footer__social-link { width: 40px; height: 40px; }
+  .footer__social-label { display: none; }
+  .status-grid { grid-template-columns: 1fr; }
+  .mini-card, .feature-card, .tool-card { padding: 22px 20px; }
+  .question__number { min-width: 26px; height: 26px; font-size: .72rem; }
+  .question__text { font-size: .96rem; }
+  .question__option span { font-size: .9rem; }
+}
+
+@media (max-width: 380px) {
+  .countdown__value { font-size: 1.55rem; }
+  .countdown__label { font-size: .6rem; letter-spacing: .1em; }
+  .navbar__brand-text { font-size: .96rem; }
+  .question__scale-item { min-width: 36px; }
+  .question__scale-item label { height: 38px; font-size: .82rem; }
+}
+
+@media (max-height: 520px) and (orientation: landscape) {
+  .nav-panel { padding-top: 82px; }
+  .hero { padding-top: calc(var(--nav-h) + 36px); }
+}
+
+@media print {
+  .navbar, .nav-panel, .nav-overlay, .hero__glow, .footer__social { display: none !important; }
+  body { background: #fff; color: #000; }
+  .section { padding: 20px 0; }
+}
