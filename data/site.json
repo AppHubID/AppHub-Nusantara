@@ -1,0 +1,32 @@
+{
+  "brand": {
+    "name": "AppHub.ID",
+    "tagline": "Platform digital yang lebih matang",
+    "status": "COMING SOON",
+    "version": "1.0.1.1.2v",
+    "launchDate": "2026-12-30T00:00:00+07:00",
+    "launchLabel": "30 Desember 2026, 00.00 WIB"
+  },
+  "contact": {
+    "email": "apphubid@gmail.com",
+    "whatsapp": "+62 889-7020-0455",
+    "whatsappUrl": "https://wa.me/6288970200455",
+    "discord": "https://discord.gg/JDeCkT4Qj",
+    "github": "https://github.com/AppHubID",
+    "facebook": "https://www.facebook.com/profile.php?id=61595025152037"
+  },
+  "socialUnavailable": [
+    { "id": "tiktok", "label": "TikTok", "status": "Segera Hadir" },
+    { "id": "twitter", "label": "Twitter", "status": "Segera Hadir" },
+    { "id": "telegram", "label": "Telegram", "status": "Segera Hadir" }
+  ],
+  "legal": {
+    "cookiePolicy": "https://apphubid.github.io/Cookie-Policy-Kebijakan-Cookie/",
+    "privacyPolicy": "https://apphubid.github.io/Privacy-Policy-Kebijakan-Privasi/",
+    "termsOfUse": "https://apphubid.github.io/Terms-of-Use-Ketentuan-Penggunaan/"
+  },
+  "urls": {
+    "site": "https://apphubid.github.io/AppHub-Nusantara/",
+    "ogImage": "https://apphubid.github.io/AppHub-Nusantara/assets/images/og-image.png"
+  }
+}

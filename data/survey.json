@@ -1,0 +1,319 @@
+{
+  "meta": {
+    "brand": "AppHub.ID",
+    "versi": "1.0.1.1.2v",
+    "judul": "Survei AppHub.ID",
+    "deskripsi": "Survei ini membantu AppHub.ID memahami kebutuhan pengguna, menentukan prioritas pengembangan, dan menyusun arah fitur berikutnya.",
+    "catatanPengiriman": "Jawaban akan disusun menjadi draft email Gmail. Anda tetap perlu menekan tombol Kirim pada Gmail untuk benar-benar mengirimkan survei.",
+    "estimasiWaktu": "Sekitar 5–8 menit",
+    "totalPertanyaan": 30
+  },
+  "sections": [
+    {
+      "id": "profil",
+      "title": "Bagian 1 — Profil Singkat",
+      "questions": [
+        {
+          "id": "q01",
+          "type": "single",
+          "required": true,
+          "text": "Bagaimana Anda mengenal AppHub.ID?",
+          "options": [
+            { "value": "teman", "label": "A. Dari teman atau komunitas" },
+            { "value": "media-sosial", "label": "B. Dari media sosial" },
+            { "value": "pencarian", "label": "C. Dari hasil pencarian Google" }
+          ]
+        },
+        {
+          "id": "q02",
+          "type": "single",
+          "required": true,
+          "text": "Siapa Anda saat ini?",
+          "options": [
+            { "value": "pelajar", "label": "A. Pelajar atau mahasiswa" },
+            { "value": "karyawan", "label": "B. Karyawan atau profesional" },
+            { "value": "usaha", "label": "C. Pelaku usaha atau freelancer" }
+          ]
+        },
+        {
+          "id": "q03",
+          "type": "single",
+          "required": true,
+          "text": "Perangkat yang paling sering Anda gunakan untuk membuka website?",
+          "options": [
+            { "value": "hp", "label": "A. Smartphone" },
+            { "value": "laptop", "label": "B. Laptop atau komputer" },
+            { "value": "tablet", "label": "C. Tablet" }
+          ]
+        },
+        {
+          "id": "q04",
+          "type": "single",
+          "required": true,
+          "text": "Seberapa sering Anda menggunakan layanan digital dalam satu minggu?",
+          "options": [
+            { "value": "jarang", "label": "A. 1–2 kali" },
+            { "value": "kadang", "label": "B. 3–5 kali" },
+            { "value": "sering", "label": "C. Lebih dari 5 kali" }
+          ]
+        },
+        {
+          "id": "q05",
+          "type": "single",
+          "required": true,
+          "text": "Kategori kebutuhan digital apa yang paling Anda prioritaskan?",
+          "options": [
+            { "value": "belajar", "label": "A. Belajar dan pengembangan diri" },
+            { "value": "kerja", "label": "B. Pekerjaan dan produktivitas" },
+            { "value": "usaha", "label": "C. Usaha dan promosi" }
+          ]
+        },
+        {
+          "id": "q06",
+          "type": "single",
+          "required": true,
+          "text": "Seberapa penting kemudahan penggunaan bagi Anda?",
+          "options": [
+            { "value": "penting", "label": "A. Sangat penting" },
+            { "value": "cukup", "label": "B. Cukup penting" },
+            { "value": "biasa", "label": "C. Biasa saja" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kebutuhan",
+      "title": "Bagian 2 — Kebutuhan Digital",
+      "questions": [
+        {
+          "id": "q07",
+          "type": "single",
+          "required": true,
+          "text": "Fitur apa yang paling Anda butuhkan dari AppHub.ID?",
+          "options": [
+            { "value": "template", "label": "A. Template siap pakai" },
+            { "value": "tools", "label": "B. Alat bantu ringan" },
+            { "value": "panduan", "label": "C. Panduan dan tutorial" }
+          ]
+        },
+        {
+          "id": "q08",
+          "type": "single",
+          "required": false,
+          "text": "Jika AppHub.ID menyediakan Starter Kit, kategori mana yang Anda minati?",
+          "options": [
+            { "value": "kreator", "label": "A. Content Creator" },
+            { "value": "umkm", "label": "B. UMKM" },
+            { "value": "mahasiswa", "label": "C. Mahasiswa" }
+          ]
+        },
+        {
+          "id": "q09",
+          "type": "scale",
+          "required": true,
+          "text": "Seberapa terbantu Anda jika ada template yang rapi dan siap pakai?",
+          "min": 1, "max": 5
+        },
+        {
+          "id": "q10",
+          "type": "scale",
+          "required": true,
+          "text": "Seberapa sering Anda merasa kesulitan memulai proyek digital dari nol?",
+          "min": 1, "max": 5
+        },
+        {
+          "id": "q11",
+          "type": "single",
+          "required": false,
+          "text": "Jenis bantuan yang paling Anda cari?",
+          "options": [
+            { "value": "desain", "label": "A. Desain visual" },
+            { "value": "koding", "label": "B. Koding dan pengembangan" },
+            { "value": "konten", "label": "C. Konten dan penulisan" }
+          ]
+        },
+        {
+          "id": "q12",
+          "type": "single",
+          "required": false,
+          "text": "Seberapa penting tampilan website yang bersih dan profesional?",
+          "options": [
+            { "value": "penting", "label": "A. Sangat penting" },
+            { "value": "cukup", "label": "B. Cukup penting" },
+            { "value": "tidak", "label": "C. Tidak terlalu penting" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pengalaman",
+      "title": "Bagian 3 — Pengalaman Website",
+      "questions": [
+        {
+          "id": "q13",
+          "type": "scale",
+          "required": true,
+          "text": "Seberapa cepat website AppHub.ID saat Anda buka? (1 = lambat, 5 = sangat cepat)",
+          "min": 1, "max": 5
+        },
+        {
+          "id": "q14",
+          "type": "scale",
+          "required": true,
+          "text": "Seberapa mudah navigasi website AppHub.ID?",
+          "min": 1, "max": 5
+        },
+        {
+          "id": "q15",
+          "type": "scale",
+          "required": true,
+          "text": "Seberapa jelas informasi yang disampaikan pada halaman utama?",
+          "min": 1, "max": 5
+        },
+        {
+          "id": "q16",
+          "type": "single",
+          "required": false,
+          "text": "Apakah website AppHub.ID nyaman dibuka di smartphone Anda?",
+          "options": [
+            { "value": "nyaman", "label": "A. Nyaman" },
+            { "value": "cukup", "label": "B. Cukup nyaman" },
+            { "value": "kurang", "label": "C. Kurang nyaman" }
+          ]
+        },
+        {
+          "id": "q17",
+          "type": "single",
+          "required": false,
+          "text": "Apakah Anda mengalami kesulitan saat menggunakan menu?",
+          "options": [
+            { "value": "tidak", "label": "A. Tidak ada kesulitan" },
+            { "value": "kadang", "label": "B. Kadang-kadang" },
+            { "value": "ya", "label": "C. Ya, cukup sering" }
+          ]
+        },
+        {
+          "id": "q18",
+          "type": "scale",
+          "required": true,
+          "text": "Seberapa puas Anda dengan tampilan keseluruhan website AppHub.ID?",
+          "min": 1, "max": 5
+        },
+        {
+          "id": "q19",
+          "type": "scale",
+          "required": true,
+          "text": "Seberapa mudah Anda memahami tujuan AppHub.ID?",
+          "min": 1, "max": 5
+        }
+      ]
+    },
+    {
+      "id": "tools",
+      "title": "Bagian 4 — Tools & Fitur Sederhana",
+      "questions": [
+        {
+          "id": "q20",
+          "type": "single",
+          "required": false,
+          "text": "Apakah Anda menggunakan kalkulator keuangan digital?",
+          "options": [
+            { "value": "sering", "label": "A. Sering" },
+            { "value": "kadang", "label": "B. Kadang-kadang" },
+            { "value": "tidak", "label": "C. Tidak pernah" }
+          ]
+        },
+        {
+          "id": "q21",
+          "type": "scale",
+          "required": true,
+          "text": "Seberapa berguna kalkulator keuangan sederhana bagi Anda?",
+          "min": 1, "max": 5
+        },
+        {
+          "id": "q22",
+          "type": "single",
+          "required": false,
+          "text": "Fitur tools apa yang paling Anda inginkan?",
+          "options": [
+            { "value": "keuangan", "label": "A. Keuangan & budget" },
+            { "value": "produktivitas", "label": "B. Produktivitas & catatan" },
+            { "value": "desain", "label": "C. Bantu desain & preview" }
+          ]
+        },
+        {
+          "id": "q23",
+          "type": "scale",
+          "required": true,
+          "text": "Seberapa penting data Anda tetap tersimpan di perangkat sendiri tanpa server?",
+          "min": 1, "max": 5
+        }
+      ]
+    },
+    {
+      "id": "harapan",
+      "title": "Bagian 5 — Harapan & Prioritas",
+      "questions": [
+        {
+          "id": "q24",
+          "type": "single",
+          "required": true,
+          "text": "Menurut Anda, mana yang harus diprioritaskan AppHub.ID?",
+          "options": [
+            { "value": "stabilitas", "label": "A. Stabilitas dan kecepatan" },
+            { "value": "fitur", "label": "B. Menambah fitur lebih cepat" },
+            { "value": "desain", "label": "C. Mempercantik tampilan" }
+          ]
+        },
+        {
+          "id": "q25",
+          "type": "scale",
+          "required": true,
+          "text": "Seberapa setuju Anda dengan keputusan AppHub.ID menyederhanakan fitur untuk memperkuat fondasi?",
+          "min": 1, "max": 5
+        },
+        {
+          "id": "q26",
+          "type": "scale",
+          "required": true,
+          "text": "Seberapa yakin Anda bahwa AppHub.ID akan hadir dengan kualitas yang lebih baik?",
+          "min": 1, "max": 5
+        }
+      ]
+    },
+    {
+      "id": "essay",
+      "title": "Bagian 6 — Ceritakan Lebih Lanjut",
+      "questions": [
+        {
+          "id": "q27",
+          "type": "essay",
+          "required": true,
+          "text": "Fitur atau bantuan digital seperti apa yang paling Anda butuhkan saat ini?",
+          "placeholder": "Tuliskan kebutuhan atau situasi Anda secara ringkas…"
+        },
+        {
+          "id": "q28",
+          "type": "essay",
+          "required": false,
+          "text": "Apa kesan pertama Anda setelah mengunjungi website AppHub.ID?",
+          "placeholder": "Bagian mana yang menarik, atau bagian mana yang membingungkan…"
+        },
+        {
+          "id": "q29",
+          "type": "essay",
+          "required": false,
+          "text": "Jika Anda dapat menyampaikan satu permintaan langsung kepada tim AppHub.ID, apa itu?",
+          "placeholder": "Contoh: mohon sediakan template X, atau tools Y…"
+        },
+        {
+          "id": "q30",
+          "type": "essay",
+          "required": false,
+          "text": "Ada hal lain yang ingin Anda tambahkan?",
+          "placeholder": "Saran, kritik, atau ide untuk AppHub.ID…"
+        }
+      ]
+    }
+  ]
+}

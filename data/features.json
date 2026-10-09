@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "brand": "AppHub.ID",
+    "status": "Perencanaan",
+    "catatan": "Seluruh kategori berikut masih dalam tahap perencanaan dan persiapan. Prioritas dapat berubah mengikuti hasil survei pengguna. Belum ada produk yang dijual.",
+    "diperbarui": "2026-10-06"
+  },
+  "items": [
+    {
+      "id": "ai-prompt",
+      "icon": "assets/icons/star.svg",
+      "nama": "AI & Prompt",
+      "deskripsi": "Kerangka prompt siap pakai untuk pekerjaan kreatif, penulisan, dan produktivitas harian.",
+      "status": "Direncanakan"
+    },
+    {
+      "id": "website-templates",
+      "icon": "assets/icons/box.svg",
+      "nama": "Website & Template",
+      "deskripsi": "Template halaman web yang rapi dan responsif sebagai titik awal proyek.",
+      "status": "Dalam Persiapan"
+    },
+    {
+      "id": "editing-desain",
+      "icon": "assets/icons/crown.svg",
+      "nama": "Editing & Desain",
+      "deskripsi": "Aset pendukung editing, preset, dan elemen grafis untuk menjaga konsistensi visual.",
+      "status": "Direncanakan"
+    },
+    {
+      "id": "produktivitas",
+      "icon": "assets/icons/check.svg",
+      "nama": "Produktivitas Digital",
+      "deskripsi": "Template dan alat bantu untuk administrasi, pencatatan, dan alur kerja harian.",
+      "status": "Direncanakan"
+    },
+    {
+      "id": "tools-sederhana",
+      "icon": "assets/icons/infinity.svg",
+      "nama": "Tools Sederhana",
+      "deskripsi": "Alat bantu ringan yang dapat langsung dipakai tanpa instalasi.",
+      "status": "Dalam Persiapan"
+    },
+    {
+      "id": "kreator",
+      "icon": "assets/icons/star.svg",
+      "nama": "Kebutuhan Kreator",
+      "deskripsi": "Paket awal untuk kreator konten: perencanaan, template, dan aset dasar produksi.",
+      "status": "Segera Hadir"
+    },
+    {
+      "id": "umkm",
+      "icon": "assets/icons/gift.svg",
+      "nama": "Kebutuhan UMKM",
+      "deskripsi": "Perangkat digital praktis untuk pelaku usaha kecil, mulai dari katalog hingga materi promosi.",
+      "status": "Direncanakan"
+    },
+    {
+      "id": "pembelajaran",
+      "icon": "assets/icons/box.svg",
+      "nama": "Pembelajaran Digital",
+      "deskripsi": "Panduan pengantar dan materi dasar untuk mempercepat pemahaman alat digital.",
+      "status": "Direncanakan"
+    },
+    {
+      "id": "starter-kit",
+      "icon": "assets/icons/crown.svg",
+      "nama": "Starter Kit Digital",
+      "deskripsi": "Paket awal yang menggabungkan beberapa aset dasar untuk kebutuhan tertentu.",
+      "status": "Segera Hadir"
+    }
+  ]
+}
