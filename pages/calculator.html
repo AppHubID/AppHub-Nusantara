@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="base-path" content="../">
+<meta name="theme-color" content="#0b1020">
+<title>Kalkulator Keuangan — AppHub.ID</title>
+<meta name="description" content="Kalkulator keuangan sederhana dari AppHub.ID. Hitung pemasukan, pengeluaran, sisa saldo, dan target tabungan dalam Rupiah.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://apphubid.github.io/AppHub-Nusantara/pages/calculator.html">
+<link rel="icon" type="image/png" href="../assets/images/favicon.png">
+<link rel="apple-touch-icon" href="../assets/images/favicon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AppHub.ID">
+<meta property="og:title" content="Kalkulator Keuangan — AppHub.ID">
+<meta property="og:description" content="Kalkulator keuangan sederhana dari AppHub.ID.">
+<meta property="og:url" content="https://apphubid.github.io/AppHub-Nusantara/pages/calculator.html">
+<meta property="og:image" content="https://apphubid.github.io/AppHub-Nusantara/assets/images/og-image.png">
+<meta property="og:locale" content="id_ID">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kalkulator Keuangan — AppHub.ID">
+<meta name="twitter:description" content="Kalkulator keuangan sederhana dari AppHub.ID.">
+<meta name="twitter:image" content="https://apphubid.github.io/AppHub-Nusantara/assets/images/og-image.png">
+
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/responsive.css">
+<link rel="stylesheet" href="../assets/css/animations.css">
+</head>
+
+<body data-page="calculator">
+<a class="skip-link" href="#main">Lewati ke konten utama</a>
+
+<div data-component="navbar"></div>
+
+<main id="main">
+
+  <header class="page-header">
+    <div class="page-header__glow" aria-hidden="true"></div>
+    <div class="container page-header__inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Beranda</a>
+        <img class="icon" src="../assets/icons/arrow-right.svg" alt="" width="14" height="14" aria-hidden="true">
+        <span aria-current="page">Kalkulator Keuangan</span>
+      </nav>
+
+      <h1 class="page-header__title">Kalkulator Keuangan</h1>
+      <p class="page-header__desc">
+        Hitung pemasukan, pengeluaran, sisa saldo, dan estimasi waktu untuk mencapai target
+        tabungan Anda. Semua perhitungan dilakukan di peramban Anda.
+      </p>
+    </div>
+  </header>
+
+  <section class="section" aria-labelledby="calc-title">
+    <div class="container">
+      <h2 class="visually-hidden" id="calc-title">Kalkulator Keuangan AppHub.ID</h2>
+
+      <div class="notice-card notice-card--info reveal" role="note" style="max-width:none; margin-bottom:28px;">
+        <img class="icon icon--lg" src="../assets/icons/bell.svg" alt="" width="22" height="22" aria-hidden="true">
+        <div>
+          <h3 class="notice-card__title">Tentang kalkulator ini</h3>
+          <p class="notice-card__text">
+            Kalkulator ini bersifat <strong>informatif</strong> dan bukan merupakan nasihat keuangan profesional.
+            Hasil perhitungan adalah estimasi. Apabila fitur simpan aktif, data Anda hanya
+            disimpan di peramban Anda sendiri dan tidak dikirim ke server AppHub.ID.
+          </p>
+        </div>
+      </div>
+
+      <form id="calcForm" class="calc-grid" novalidate>
+
+        <div class="calc-panel reveal">
+          <h2 class="calc-panel__title">Data Keuangan Anda</h2>
+
+          <div class="field">
+            <label class="field__label" for="calcIncome">Total Pemasukan Bulanan</label>
+            <input class="field__input"
+                   type="number"
+                   min="0"
+                   step="1000"
+                   inputmode="numeric"
+                   id="calcIncome"
+                   name="calcIncome"
+                   placeholder="Contoh: 5000000">
+            <p class="field__hint">Masukkan angka tanpa titik atau koma. Contoh: 5000000.</p>
+          </div>
+
+          <h3 class="calc-panel__title" style="margin-top:24px;">Daftar Pengeluaran</h3>
+
+          <div id="expenseList"></div>
+
+          <div class="calc-actions">
+            <button type="button" class="btn btn--outline btn--sm" id="addExpense">
+              <img class="icon icon--sm" src="../assets/icons/arrow-down.svg" alt="" width="16" height="16" aria-hidden="true">
+              Tambah Pengeluaran
+            </button>
+          </div>
+
+          <h3 class="calc-panel__title" style="margin-top:28px;">Target Tabungan</h3>
+
+          <div class="field">
+            <label class="field__label" for="calcTarget">Target Tabungan</label>
+            <input class="field__input"
+                   type="number"
+                   min="0"
+                   step="1000"
+                   inputmode="numeric"
+                   id="calcTarget"
+                   name="calcTarget"
+                   placeholder="Contoh: 20000000">
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="calcSaved">Tabungan Saat Ini</label>
+            <input class="field__input"
+                   type="number"
+                   min="0"
+                   step="1000"
+                   inputmode="numeric"
+                   id="calcSaved"
+                   name="calcSaved"
+                   placeholder="Contoh: 3500000">
+          </div>
+
+          <div class="calc-actions">
+            <button type="button" class="btn btn--ghost btn--sm" id="resetCalc">
+              <img class="icon icon--sm" src="../assets/icons/close.svg" alt="" width="16" height="16" aria-hidden="true">
+              Reset Data
+            </button>
+          </div>
+        </div>
+
+        <aside class="calc-summary reveal" aria-live="polite">
+          <h2 class="calc-panel__title" style="margin-bottom:6px;">Ringkasan Keuangan</h2>
+
+          <div class="calc-row">
+            <span>Total Pemasukan</span>
+            <strong id="calcTotalIncome">Rp0</strong>
+          </div>
+
+          <div class="calc-row">
+            <span>Total Pengeluaran</span>
+            <strong id="calcTotalExpense">Rp0</strong>
+          </div>
+
+          <div class="calc-row">
+            <span>Persentase Pengeluaran</span>
+            <strong id="calcRatio">0%</strong>
+          </div>
+
+          <div class="calc-row">
+            <span>Sisa Saldo</span>
+            <strong id="calcBalance">Rp0</strong>
+          </div>
+
+          <div class="calc-row">
+            <span>Sisa Menuju Target</span>
+            <strong id="calcTargetRemain">Rp0</strong>
+          </div>
+
+          <div class="calc-row calc-row--total">
+            <span>Estimasi</span>
+            <strong id="calcEstimate" style="font-size:.95rem; font-weight:500; text-align:right;">Belum dihitung.</strong>
+          </div>
+
+          <p class="calc-note">
+            Estimasi waktu menabung dihitung dengan asumsi Anda menabung seluruh sisa
+            saldo bulanan untuk mencapai target. Hasil dapat berbeda dari kondisi sebenarnya.
+          </p>
+        </aside>
+
+      </form>
+
+      <p class="disclaimer reveal" style="margin-top:32px;">
+        AppHub.ID tidak mengirim data keuangan Anda ke server mana pun. Data hanya berada
+        di peramban Anda selama Anda tidak menghapusnya.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<div data-component="footer"></div>
+
+<script src="../assets/js/main.js" defer></script>
+<script src="../assets/js/countdown.js" defer></script>
+<script src="../assets/js/calculator.js" defer></script>
+</body>
+</html>

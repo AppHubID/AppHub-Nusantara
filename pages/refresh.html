@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="base-path" content="../">
+<meta name="theme-color" content="#0b1020">
+<title>Refresh &amp; Performa — AppHub.ID</title>
+<meta name="description" content="Panduan cepat dari AppHub.ID untuk mengatasi halaman yang lambat, tidak merespons, atau gagal memuat resource.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://apphubid.github.io/AppHub-Nusantara/pages/refresh.html">
+<link rel="icon" type="image/png" href="../assets/images/favicon.png">
+<link rel="apple-touch-icon" href="../assets/images/favicon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AppHub.ID">
+<meta property="og:title" content="Refresh &amp; Performa — AppHub.ID">
+<meta property="og:description" content="Panduan cepat mengatasi halaman yang lambat atau tidak merespons.">
+<meta property="og:url" content="https://apphubid.github.io/AppHub-Nusantara/pages/refresh.html">
+<meta property="og:image" content="https://apphubid.github.io/AppHub-Nusantara/assets/images/og-image.png">
+<meta property="og:locale" content="id_ID">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Refresh &amp; Performa — AppHub.ID">
+<meta name="twitter:description" content="Panduan cepat mengatasi halaman yang lambat atau tidak merespons.">
+<meta name="twitter:image" content="https://apphubid.github.io/AppHub-Nusantara/assets/images/og-image.png">
+
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/responsive.css">
+<link rel="stylesheet" href="../assets/css/animations.css">
+</head>
+
+<body data-page="refresh">
+<a class="skip-link" href="#main">Lewati ke konten utama</a>
+
+<div data-component="navbar"></div>
+
+<main id="main">
+
+  <header class="page-header">
+    <div class="page-header__glow" aria-hidden="true"></div>
+    <div class="container page-header__inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Beranda</a>
+        <img class="icon" src="../assets/icons/arrow-right.svg" alt="" width="14" height="14" aria-hidden="true">
+        <span aria-current="page">Refresh &amp; Performa</span>
+      </nav>
+
+      <h1 class="page-header__title">Refresh &amp; Performa</h1>
+      <p class="page-header__desc">
+        Beberapa langkah sederhana yang dapat membantu ketika halaman terasa lambat,
+        tidak merespons, atau sebagian tampilan tidak muncul sempurna.
+      </p>
+    </div>
+  </header>
+
+  <section class="section" id="refreshPanel" aria-labelledby="status-title">
+    <div class="container">
+      <header class="section__head reveal">
+        <p class="eyebrow">Status Singkat</p>
+        <h2 class="section__title" id="status-title">Pemeriksaan cepat</h2>
+        <p class="section__desc">
+          Informasi berikut diperoleh dari pemeriksaan ringan yang dilakukan di peramban Anda.
+        </p>
+      </header>
+
+      <div class="status-grid">
+        <div class="status-card" id="statusConn">
+          <span class="status-card__label">Status Koneksi</span>
+          <span class="status-card__value">Memeriksa…</span>
+          <span class="status-card__hint" id="statusConnHint">Menunggu hasil pemeriksaan.</span>
+        </div>
+
+        <div class="status-card" id="statusLogo">
+          <span class="status-card__label">Logo</span>
+          <span class="status-card__value">Memeriksa…</span>
+          <span class="status-card__hint">assets/images/logo.png</span>
+        </div>
+
+        <div class="status-card" id="statusCss">
+          <span class="status-card__label">Stylesheet</span>
+          <span class="status-card__value">Memeriksa…</span>
+          <span class="status-card__hint">assets/css/style.css</span>
+        </div>
+
+        <div class="status-card" id="statusJs">
+          <span class="status-card__label">JavaScript Utama</span>
+          <span class="status-card__value">Memeriksa…</span>
+          <span class="status-card__hint">assets/js/main.js</span>
+        </div>
+      </div>
+
+      <div class="section__foot reveal">
+        <button type="button" class="btn btn--outline" id="btnRecheck">
+          <img class="icon icon--sm" src="../assets/icons/infinity.svg" alt="" width="16" height="16" aria-hidden="true">
+          Periksa Ulang
+        </button>
+        <button type="button" class="btn btn--primary" id="btnReload" style="margin-left:12px;">
+          <img class="icon icon--sm" src="../assets/icons/arrow-down.svg" alt="" width="16" height="16" aria-hidden="true">
+          Muat Ulang Halaman
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="panduan-title">
+    <div class="container">
+      <header class="section__head reveal">
+        <p class="eyebrow">Panduan</p>
+        <h2 class="section__title" id="panduan-title">Langkah yang bisa dicoba</h2>
+        <p class="section__desc">
+          Urutkan dari langkah paling ringan sampai yang sedikit lebih menyeluruh.
+        </p>
+      </header>
+
+      <ul class="guide-list reveal">
+        <li>
+          <img class="icon icon--sm" src="../assets/icons/check.svg" alt="" width="16" height="16" aria-hidden="true">
+          <span><strong>Muat ulang halaman.</strong> Tekan tombol <em>Muat Ulang Halaman</em> di atas, atau tekan kombinasi <kbd>Ctrl + F5</kbd> (Windows) / <kbd>Cmd + Shift + R</kbd> (macOS) untuk memuat ulang tanpa cache.</span>
+        </li>
+        <li>
+          <img class="icon icon--sm" src="../assets/icons/check.svg" alt="" width="16" height="16" aria-hidden="true">
+          <span><strong>Periksa koneksi internet.</strong> Pastikan perangkat Anda benar-benar terhubung ke jaringan. Jika menggunakan Wi-Fi publik, coba pindah ke jaringan lain.</span>
+        </li>
+        <li>
+          <img class="icon icon--sm" src="../assets/icons/check.svg" alt="" width="16" height="16" aria-hidden="true">
+          <span><strong>Tutup tab yang tidak digunakan.</strong> Terlalu banyak tab terbuka dapat memperlambat peramban dan memengaruhi tampilan halaman.</span>
+        </li>
+        <li>
+          <img class="icon icon--sm" src="../assets/icons/check.svg" alt="" width="16" height="16" aria-hidden="true">
+          <span><strong>Bersihkan cache peramban secara manual.</strong> Buka menu pengaturan peramban → Privasi → Hapus data penjelajahan. Pilih hanya bagian Cache; tidak perlu menghapus kata sandi atau riwayat.</span>
+        </li>
+        <li>
+          <img class="icon icon--sm" src="../assets/icons/check.svg" alt="" width="16" height="16" aria-hidden="true">
+          <span><strong>Coba peramban lain.</strong> Kadang masalah berasal dari ekstensi peramban tertentu. Membuka website di peramban lain dapat membantu memastikan.</span>
+        </li>
+        <li>
+          <img class="icon icon--sm" src="../assets/icons/check.svg" alt="" width="16" height="16" aria-hidden="true">
+          <span><strong>Hubungi kami bila masalah berlanjut.</strong> Kirimkan pesan melalui <a href="mailto:apphubid@gmail.com">apphubid@gmail.com</a> dengan menyertakan perangkat dan peramban yang Anda gunakan.</span>
+        </li>
+      </ul>
+
+      <div class="notice-card notice-card--warn reveal" role="note" style="margin-top:32px; max-width:none;">
+        <img class="icon icon--lg" src="../assets/icons/bell.svg" alt="" width="22" height="22" aria-hidden="true">
+        <div>
+          <h3 class="notice-card__title">Yang tidak dilakukan halaman ini</h3>
+          <p class="notice-card__text">
+            Halaman ini tidak memindai perangkat Anda, tidak menghapus virus, dan tidak
+            memperbaiki kerusakan sistem operasi. Peramban tidak memiliki akses untuk
+            melakukan hal-hal tersebut. Jika Anda khawatir terhadap keamanan perangkat,
+            gunakan fitur keamanan resmi dari sistem operasi Anda atau antivirus tepercaya.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div data-component="footer"></div>
+
+<script src="../assets/js/main.js" defer></script>
+<script src="../assets/js/countdown.js" defer></script>
+<script src="../assets/js/refresh.js" defer></script>
+</body>
+</html>
