@@ -1,0 +1,69 @@
+<section class="survey-shell" aria-labelledby="survey-title">
+
+  <header class="section__head reveal" style="text-align:left; max-width:none; margin-bottom:24px;">
+    <p class="eyebrow">Survei AppHub.ID</p>
+    <h2 class="section__title section__title--left" id="survey-title">Bantu kami menentukan arah pengembangan</h2>
+    <p class="section__desc section__desc--left">
+      Jawaban Anda akan membantu AppHub.ID memprioritaskan fitur yang benar-benar dibutuhkan.
+      Perlu waktu sekitar 5–8 menit untuk mengisi seluruh pertanyaan.
+    </p>
+  </header>
+
+  <div class="notice-card notice-card--info reveal" role="note" style="max-width:none; margin-bottom:22px;">
+    <img class="icon icon--lg" src="{{BASE}}assets/icons/bell.svg" alt="" width="22" height="22" aria-hidden="true">
+    <div>
+      <h3 class="notice-card__title">Cara pengiriman survei</h3>
+      <p class="notice-card__text">
+        Setelah Anda menekan tombol <em>Kirim Survei</em>, kami akan membuka draft email Gmail
+        berisi seluruh jawaban Anda. Anda tetap perlu menekan tombol <strong>Kirim</strong>
+        pada halaman Gmail untuk benar-benar mengirimkan survei.
+      </p>
+    </div>
+  </div>
+
+  <div class="survey-progress" role="status" aria-live="polite">
+    <div class="survey-progress__bar" aria-hidden="true">
+      <div class="survey-progress__fill" id="surveyProgressFill"></div>
+    </div>
+    <span class="survey-progress__text" id="surveyProgressText">0 dari 30 terjawab (0%)</span>
+  </div>
+
+  <form id="surveyForm" novalidate>
+
+    <div class="field">
+      <label class="field__label" for="respondentEmail">Email Responden <span class="question__req">*</span></label>
+      <input class="field__input"
+             type="email"
+             id="respondentEmail"
+             name="respondentEmail"
+             placeholder="nama@email.com"
+             autocomplete="email"
+             required>
+      <p class="field__hint">Email ini hanya dipakai agar tim AppHub.ID dapat menghubungi Anda bila diperlukan.</p>
+      <p class="field__error" id="emailError"></p>
+    </div>
+
+    <div id="surveyQuestions">
+      <p class="state state--loading">Memuat pertanyaan…</p>
+    </div>
+
+    <div class="survey-actions">
+      <button type="button" class="btn btn--ghost" id="resetSurvey">
+        <img class="icon icon--sm" src="{{BASE}}assets/icons/close.svg" alt="" width="16" height="16" aria-hidden="true">
+        Kosongkan Jawaban
+      </button>
+      <button type="button" class="btn btn--outline" id="mailtoSurvey">
+        <img class="icon icon--sm" src="{{BASE}}assets/icons/gmail.svg" alt="" width="16" height="16" aria-hidden="true">
+        Kirim via Aplikasi Email
+      </button>
+      <button type="button" class="btn btn--primary" id="submitSurvey">
+        <img class="icon icon--sm" src="{{BASE}}assets/icons/arrow-right.svg" alt="" width="16" height="16" aria-hidden="true">
+        Kirim Survei via Gmail
+      </button>
+    </div>
+
+    <div class="survey-summary" id="surveySentNotice" hidden></div>
+
+  </form>
+
+</section>
